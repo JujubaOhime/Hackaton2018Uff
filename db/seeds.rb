@@ -15,15 +15,15 @@ Student.create!(
 
 10.times do |i|
     Quiz.create!(
-        title: Faker::Lorem.sentence,
-        description: Faker::Lorem.paragraph,
+        title: Faker::LeagueOfLegends.champion,
+        description: Faker::LeagueOfLegends.rank,
         quantity_questions: 0
     )
 end
 
 20.times do |i|
     Question.create!(
-        title: Faker::Lorem.sentence,
+        title: Faker::LeagueOfLegends.masteries,
         explanation: Faker::Lorem.sentence,
         quantity_answers: 0,
         quiz_id: rand(1..9)
@@ -34,7 +34,7 @@ end
 
 50.times do |i|
     Answer.create!(
-        content: Faker::Lorem.sentence,
+        content: Faker::LeagueOfLegends.quote,
         question_id: rand(1..19)
     )
 end
