@@ -25,7 +25,7 @@
     <%= form.label :explanation, "Explicação da Resposta" %>
     <%= form.text_field :explanation %>
   </div>
-  
+
   <% if !params[:quiz_id].nil? %>
     <div class="field">
       <%= form.hidden_field :quiz_id, value: params[:quiz_id] %>
@@ -33,6 +33,6 @@
   <% end %>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit value: "Enviar" %>
   </div>
 <% end %>
