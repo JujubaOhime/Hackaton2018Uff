@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'answers/create'
+  get 'answers/update'
+  get 'answers/destroy'
   resources :quizzes
   root to: "students#index"
   devise_for :students
