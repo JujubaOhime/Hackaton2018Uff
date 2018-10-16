@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'static_page/home'
   root to: "students#index"
   devise_for :students
   resources :students
