@@ -5,9 +5,10 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Birth</th>
-      <th>Score</th>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Nascimento</th>
+      <th>Pontuação</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,11 +17,12 @@
     <% @students.each do |student| %>
       <tr>
         <td><%= student.name %></td>
+        <td><%= student.email %></td>
         <td><%= student.birth %></td>
         <td><%= student.score %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar Estudante', student %></td>
+        <td><%= link_to 'Editar Estudante', edit_student_path(student) %></td>
+        <td><%= link_to 'Excluir Estudante', student, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Student', new_student_path %>
+<%= link_to 'Adicionar Novo Estudante', new_student_path %>
