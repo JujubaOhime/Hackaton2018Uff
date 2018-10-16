@@ -1,36 +1,30 @@
 class QuestionsController < ApplicationController
     before_action :set_question, only: [:show, :edit, :update, :destroy]
-    
-    
-    def show
-        @answers = @question.answers
-    end
 
     def new
-        @question = Question.new
-    end
-
-    def edit
+        @quiz = Quiz.find(params[:quiz_id])
     end
 
     def create
         @question = Question.new(question_params)
+        @question.quantity_answers = 0
 
         respond_to do |format|
-        if @question.save
-            format.html { redirect_to @question, notice: 'Pergunta criada com sucesso.' }
-            format.json { render :show, status: :created, location: @question }
-        else
-            format.html { render :new }
-            format.json { render json: @question.errors, status: :unprocessable_entity }
-        end
+            if @question.save
+                @question.quiz.question_added
+                format.html { redirect_to @question.quiz, notice: 'Pergunta criada com sucesso.' }
+                format.json { render :show, status: :created, location: @question }
+            else
+                format.html { render :new }
+                format.json { render json: @question.errors, status: :unprocessable_entity }
+            end
         end
     end
 
     def update
         respond_to do |format|
             if @question.update(question_params)
-              format.html { redirect_to @question, notice: 'Pergunta atualizada com sucesso.' }
+              format.html { redirect_to @question.quiz, notice: 'Pergunta atualizada com sucesso.' }
               format.json { render :show, status: :ok, location: @question }
             else
               format.html { render :edit }
@@ -41,6 +35,7 @@ class QuestionsController < ApplicationController
 
     def destroy
         @question.destroy
+        @question.quiz.question_removed
         respond_to do |format|
             format.html { redirect_to @question.quiz, notice: 'Pergunta removida com sucesso.' }
             format.json { head :no_content }
@@ -53,6 +48,6 @@ class QuestionsController < ApplicationController
         end
 
         def question_params
-            params.require(:question).permit(:title, :answer_explanation, :answer_id)
+            params.require(:question).permit(:title, :answer_explanation, :quiz_id)
           end
 end

@@ -1,7 +1,7 @@
 <%= form_with(model: question, local: true) do |form| %>
   <% if question.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
+      <h2><%= pluralize(question.errors.count, "error") %> impediu esta pergunta de ser salva:</h2>
 
       <ul>
       <% question.errors.full_messages.each do |message| %>
@@ -12,8 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label :title, "Título" %>
     <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :answer_explanation, "Explicação da Resposta" %>
+    <%= form.text_field :answer_explanation %>
   </div>
 
   <div class="actions">
