@@ -1,0 +1,142 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *= require sweetalert 
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap";
+
+/*
+ ########  ########  ######  ######## ######## 
+ ##     ## ##       ##    ## ##          ##    
+ ##     ## ##       ##       ##          ##    
+ ########  ######    ######  ######      ##    
+ ##   ##   ##             ## ##          ##    
+ ##    ##  ##       ##    ## ##          ##    
+ ##     ## ########  ######  ########    ##    */
+ 
+ html, body, div, span, applet, object, iframe,
+ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+ a, abbr, acronym, address, big, cite, code,
+ del, dfn, em, img, ins, kbd, q, s, samp,
+ small, strike, strong, sub, sup, tt, var,
+ b, u, i, center,
+ dl, dt, dd, ol, ul, li,
+ fieldset, form, label, legend,
+ table, caption, tbody, tfoot, thead, tr, th, td,
+ article, aside, canvas, details, embed, 
+ figure, figcaption, footer, header, hgroup, 
+ menu, nav, output, ruby, section, summary,
+ time, mark, audio, video {
+     margin: 0;
+     padding: 0;
+     border: 0;
+     font-size: 100%;
+     font: inherit;
+     vertical-align: baseline;
+ }
+ /* HTML5 display-role reset for older browsers */
+ article, aside, details, figcaption, figure, 
+ footer, header, hgroup, menu, nav, section {
+     display: block;
+ }
+ body {
+     line-height: 1;
+ }
+ ol, ul {
+     list-style: none;
+ }
+ blockquote, q {
+     quotes: none;
+ }
+ blockquote:before, blockquote:after,
+ q:before, q:after {
+     content: '';
+     content: none;
+ }
+ table {
+     border-collapse: collapse;
+     border-spacing: 0;
+ }
+
+/*
+ ##     ##    ###    ########  ####    ###    ########  ##       ########  ######  
+ ##     ##   ## ##   ##     ##  ##    ## ##   ##     ## ##       ##       ##    ## 
+ ##     ##  ##   ##  ##     ##  ##   ##   ##  ##     ## ##       ##       ##       
+ ##     ## ##     ## ########   ##  ##     ## ########  ##       ######    ######  
+  ##   ##  ######### ##   ##    ##  ######### ##     ## ##       ##             ## 
+   ## ##   ##     ## ##    ##   ##  ##     ## ##     ## ##       ##       ##    ## 
+    ###    ##     ## ##     ## #### ##     ## ########  ######## ########  ######  */
+ 
+    $white: #FAFAFA;
+    $oil: #2D3142;
+    $green: #63D761;
+    $grey: #BDBDBD;
+    
+    @font-face {
+        font-family: 'PressStart2P';
+        src: font-url('../fonts/PressStart2P-Regular.ttf');
+    }
+    
+    
+ /*
+ 
+##        #######   ######   #### ##    ## 
+##       ##     ## ##    ##   ##  ###   ## 
+##       ##     ## ##         ##  ####  ## 
+##       ##     ## ##   ####  ##  ## ## ## 
+##       ##     ## ##    ##   ##  ##  #### 
+##       ##     ## ##    ##   ##  ##   ### 
+########  #######   ######   #### ##    ## 
+
+*/
+
+.pagelogin{
+    background-color: $oil;
+}
+
+.buttons{
+    background-color: $green;
+    border: 0.5px solid $grey;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-family: "PressStart2P";
+    margin-right: 15px;
+    padding: 10px;
+}
+
+.field-login, .actions-login{
+    display: inline;
+    padding: 10px;
+}
+.login{
+    float: right;
+    margin-top: 15px;
+}
+
+.pagelogin .icone{
+    width: 100px;
+    margin-left: 20px;
+    margin-top: -15px;
+    
+}
+
+.pagelogin .field-login input{
+    background-color: $oil;
+    border-radius: 5px;
+    border: 0.5px solid $grey;
+    padding: 10px;
+}
+
+.pagelogin .field-login input::placeholder{
+    color: $grey;
+}
