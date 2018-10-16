@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   resources :students
 
   resources :quizzes do
-    resources :questions, except: [:index]
+    resources :questions, except: [:index, :show]
   end
 
-  resources :questions do
+  resources :questions, except: [:show, :index] do
     resources :answers, except: [:show, :index]
   end
 
