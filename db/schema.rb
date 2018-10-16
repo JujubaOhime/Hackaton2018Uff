@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2018_10_16_154842) do
 
   create_table "questions", force: :cascade do |t|
     t.string "title"
-    t.string "answer_explanation"
+    t.string "explanation"
     t.integer "quantity_answers"
     t.integer "quiz_id"
     t.integer "answer_id"

@@ -24,5 +24,6 @@
       </li>
     <% end %>
   </ol>
+  <p>Resposta correta: <%= question.answer.content if !question.answer.nil? %></p>
   <hr>
 <% end %>

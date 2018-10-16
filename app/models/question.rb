@@ -1,7 +1,7 @@
 class Question < ApplicationRecord
   belongs_to :quiz
   has_many :answers # Opções
-  belongs_to :answer # Resposta correta
+  belongs_to :answer, optional: true # Resposta correta
 
   
   def answer_added
