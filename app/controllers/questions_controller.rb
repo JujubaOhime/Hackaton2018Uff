@@ -6,6 +6,10 @@ class QuestionsController < ApplicationController
         @question = Question.new
     end
 
+    def show
+        @answers = @question.answers
+    end
+
     def create
         @question = Question.new(question_params)
         @question.quantity_answers = 0
@@ -25,7 +29,7 @@ class QuestionsController < ApplicationController
     def update
         respond_to do |format|
             if @question.update(question_params)
-              format.html { redirect_to @question.quiz, notice: 'Pergunta atualizada com sucesso.' }
+              format.html { redirect_to @question, notice: 'Pergunta atualizada com sucesso.' }
               format.json { render :show, status: :ok, location: @question }
             else
               format.html { render :edit }
