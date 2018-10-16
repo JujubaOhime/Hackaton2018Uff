@@ -2,8 +2,8 @@
 
 one:
   quiz_qty: 1
-  achievement_references: MyString
+  achievement: one
 
 two:
   quiz_qty: 1
-  achievement_references: MyString
+  achievement: two

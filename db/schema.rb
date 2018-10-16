@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_16_223714) do
+ActiveRecord::Schema.define(version: 2018_10_16_224314) do
 
   create_table "achievement_scores", force: :cascade do |t|
     t.integer "score"
@@ -50,9 +50,10 @@ ActiveRecord::Schema.define(version: 2018_10_16_223714) do
 
   create_table "quiz_qty_achievements", force: :cascade do |t|
     t.integer "quiz_qty"
-    t.string "achievement_references"
+    t.integer "achievement_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["achievement_id"], name: "index_quiz_qty_achievements_on_achievement_id"
   end
 
   create_table "quizzes", force: :cascade do |t|
