@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_16_220021) do
+ActiveRecord::Schema.define(version: 2018_10_16_224314) do
 
   create_table "achievement_scores", force: :cascade do |t|
     t.integer "score"
@@ -48,6 +48,14 @@ ActiveRecord::Schema.define(version: 2018_10_16_220021) do
     t.index ["quiz_id"], name: "index_questions_on_quiz_id"
   end
 
+  create_table "quiz_qty_achievements", force: :cascade do |t|
+    t.integer "quiz_qty"
+    t.integer "achievement_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["achievement_id"], name: "index_quiz_qty_achievements_on_achievement_id"
+  end
+
   create_table "quizzes", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -63,6 +71,15 @@ ActiveRecord::Schema.define(version: 2018_10_16_220021) do
     t.datetime "updated_at", null: false
     t.index ["achievement_id"], name: "index_student_achievements_on_achievement_id"
     t.index ["student_id"], name: "index_student_achievements_on_student_id"
+  end
+
+  create_table "student_quizzes", force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "quiz_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["quiz_id"], name: "index_student_quizzes_on_quiz_id"
+    t.index ["student_id"], name: "index_student_quizzes_on_student_id"
   end
 
   create_table "students", force: :cascade do |t|
