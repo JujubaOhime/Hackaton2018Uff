@@ -67,7 +67,9 @@
      border-collapse: collapse;
      border-spacing: 0;
  }
-
+ html{
+        font-size: 1em;
+    }
 /*
  ##     ##    ###    ########  ####    ###    ########  ##       ########  ######  
  ##     ##   ## ##   ##     ##  ##    ## ##   ##     ## ##       ##       ##    ## 
@@ -130,7 +132,7 @@
     
 }
 
-.pagelogin .field-login input{
+.pagelogin .field-login input, .pagelogin .field-cadastro input, .pagelogin .field-cadastro-1 input{
     background-color: $oil;
     border-radius: 5px;
     border: 0.5px solid $grey;
@@ -139,4 +141,66 @@
 
 .pagelogin .field-login input::placeholder{
     color: $grey;
+}
+
+h1{
+    font-size: 3em;
+    color: $white;
+    text-align: center;
+}
+
+h2{
+    font-size: 2em;
+    color: $white;
+    text-align: center;
+    margin-top: 1em;
+
+}
+.pagelogin .titulo-login{
+    float: left;
+    height: 400px;
+    display: flex;
+    width: 67vw;
+}
+
+.body{
+    min-height: 900px;
+}
+
+.pagelogin .titulo-login-center{
+    margin: auto;
+}
+
+.pagelogin .cadastro{
+    float: right;
+    width: 29vw;
+    display: flex;
+    margin-right: 10px;
+}
+
+.pagelogin .center-cadastro{
+    margin: 0px auto;
+}
+.pagelogin label{
+    color: $white;
+    margin-top: 1em;
+}
+
+.pagelogin .field-cadastro-1 label{
+    margin-top: 30px;
+    text-align: center
+}
+
+.pagelogin #student_birth{
+    width: 100%;
+    color: $white;
+}
+
+.pagelogin #student_password_confirmation{
+    margin-bottom: 10px;
+}
+
+.pagelogin .actions-cadastro .buttons{
+    width: 100%;
+    margin-top: 10px;
 }
