@@ -15,7 +15,7 @@
 
 <h2>Perguntas do Quiz:</h2>
 <% @questions.each do |question| %>
-  <p><%= link_to question.title, quiz_question_path(@quiz, question) %></p>
+  <h3><%= link_to question.title, quiz_question_path(@quiz, question) %></h3>
   <ul>
     <% question.answers.each do |answer| %>
       <li>

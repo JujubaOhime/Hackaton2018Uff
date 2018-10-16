@@ -22,15 +22,20 @@ ActiveRecord::Schema.define(version: 2018_10_16_154842) do
 
   create_table "questions", force: :cascade do |t|
     t.string "title"
+    t.string "answer_explanation"
+    t.integer "quantity_answers"
     t.integer "quiz_id"
+    t.integer "answer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["answer_id"], name: "index_questions_on_answer_id"
     t.index ["quiz_id"], name: "index_questions_on_quiz_id"
   end
 
   create_table "quizzes", force: :cascade do |t|
     t.string "title"
     t.string "description"
+    t.integer "quantity_questions"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
