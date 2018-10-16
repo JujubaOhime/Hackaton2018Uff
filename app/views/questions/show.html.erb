@@ -1,0 +1,45 @@
+<p>
+  <strong>Título:</strong>
+  <%= @question.title %>
+</p>
+
+<p>
+  <strong>Explicação da Resposta:</strong>
+  <%= @question.explanation %>
+</p>
+
+<ol>
+<% @answers.each do |answer| %>
+    <li>
+    <%= answer.content %>
+    </li>
+<% end %>
+</ol>
+<p>Resposta correta: <%= @question.answer.content if !@question.answer.nil? %></p>
+<hr>
+<h2>Adicionar nova resposta:</h2>
+
+<%= form_for :answer, url: {controller: :answers, action: :create} do |f| %>
+  <div class="field">
+    <%= f.label :content, "Resposta" %>
+    <%= f.text_field :content %>
+  </div>
+
+  <%= f.hidden_field :question_id, value: @question.id %>
+
+  <div class="actions">
+    <%= f.submit "Adicionar resposta" %>
+  </div>
+<% end %>
+
+<h2>Remover resposta:</h2>
+<%= form_for :answer, url: {controller: :answers, action: :destroy}, method: :delete do |f| %>
+  <div class="field">
+    <%= f.label :content, "Resposta a Remover" %>
+    <%= f.select :id, answer_options %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Remover resposta" %>
+  </div>
+<% end %>

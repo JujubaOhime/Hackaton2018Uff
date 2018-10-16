@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :questions, except: [:edit, :index, :show]
   end
 
-  resources :questions, except: [:new, :show, :index] do
+  resources :questions, except: [:new, :index] do
     resources :answers, except: [:show, :index]
   end
 
