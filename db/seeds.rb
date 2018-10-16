@@ -44,3 +44,18 @@ Question.all.each do |q|
     q.answer_id = q.answers.second.id
     q.save!
 end
+
+20.times do |i|
+    Achievement.create!(
+        title: Faker::Lorem.sentence,
+        description: Faker::Lorem.sentence,
+        image: Faker::Lorem.sentence
+    )
+end
+
+20.times do |i|
+    AchievementScore.create!(
+        achievement_id: (i+1),
+        score: 10*(i+1)
+    )
+end
