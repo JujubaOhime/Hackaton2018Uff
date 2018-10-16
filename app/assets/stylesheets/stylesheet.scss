@@ -14,7 +14,7 @@
  *= require_self
  */
  @import "bootstrap";
-
+ @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 /*
  ########  ########  ######  ######## ######## 
  ##     ## ##       ##    ## ##          ##    
@@ -84,10 +84,7 @@
     $green: #63D761;
     $grey: #BDBDBD;
     
-    @font-face {
-        font-family: 'PressStart2P';
-        src: font-url('../fonts/PressStart2P-Regular.ttf');
-    }
+    
     
     
  /*
@@ -147,6 +144,7 @@ h1{
     font-size: 3em;
     color: $white;
     text-align: center;
+    font-family: 'Press Start 2P', cursive;
 }
 
 h2{
@@ -154,6 +152,7 @@ h2{
     color: $white;
     text-align: center;
     margin-top: 1em;
+    font-family: 'Press Start 2P', cursive;
 
 }
 .pagelogin .titulo-login{
