@@ -1,0 +1,2 @@
+class QuizQtyAchievement < ApplicationRecord
+end

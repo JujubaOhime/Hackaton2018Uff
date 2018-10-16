@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quiz_qty: 1
+  achievement_references: MyString
+
+two:
+  quiz_qty: 1
+  achievement_references: MyString
