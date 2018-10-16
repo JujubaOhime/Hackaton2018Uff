@@ -43,3 +43,15 @@
     <%= f.submit "Remover resposta" %>
   </div>
 <% end %>
+
+<h2>Definir resposta correta:</h2>
+<%= form_for :question, url: {controller: :questions, action: :update}, method: :patch do |f| %>
+  <div class="field">
+    <%= f.label :answer_id, "Resposta correta" %>
+    <%= f.select :answer_id, answer_options %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Selecionar resposta correta" %>
+  </div>
+<% end %>
