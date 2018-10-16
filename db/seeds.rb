@@ -9,7 +9,8 @@
 10.times do |i|
     Quiz.create(
         title: Faker::Lorem.sentence,
-        description: Faker::Lorem.paragraph
+        description: Faker::Lorem.paragraph,
+        quantity_questions: 0
     )
 end
 
@@ -17,6 +18,7 @@ end
     Question.create(
         title: Faker::Lorem.sentence,
         answer_explanation: Faker::Lorem.sentence,
+        quantity_answers: 0,
         quiz_id: rand(1..9)
     )
 end

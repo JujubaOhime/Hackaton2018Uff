@@ -1,13 +1,14 @@
 class Question < ApplicationRecord
   belongs_to :quiz
-  has_many :answers
+  has_many :answers # Opções
+  belongs_to :answer # Resposta correta
 
   
   def answer_added
-    quantity_answers += 1
+    self.quantity_answers += 1
   end
 
   def answer_removed
-    quantity_answers -= 1
+    self.quantity_answers -= 1
   end
 end

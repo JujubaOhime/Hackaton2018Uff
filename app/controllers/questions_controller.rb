@@ -3,6 +3,7 @@ class QuestionsController < ApplicationController
 
     def new
         @quiz = Quiz.find(params[:quiz_id])
+        @question = Question.new
     end
 
     def create
@@ -48,6 +49,6 @@ class QuestionsController < ApplicationController
         end
 
         def question_params
-            params.require(:question).permit(:title, :answer_explanation, :quiz_id)
+            params.require(:question).permit(:title, :answer_explanation, :quiz_id, :answer_id)
           end
 end

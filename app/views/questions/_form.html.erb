@@ -17,8 +17,17 @@
   </div>
 
   <div class="field">
+    <%= form.label :answer_id, "Resposta correta" %>
+    <%= form.select :answer_id, answer_options %>
+  </div>
+
+  <div class="field">
     <%= form.label :answer_explanation, "Explicação da Resposta" %>
     <%= form.text_field :answer_explanation %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :quiz_id, value: params[:quiz_id] %>
   </div>
 
   <div class="actions">

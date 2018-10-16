@@ -3,10 +3,10 @@ class Quiz < ApplicationRecord
 
 
     def question_added
-        quantity_questions += 1
+        self.quantity_questions += 1
     end
 
     def question_removed
-        quantity_questions -= 1
+        self.quantity_questions -= 1
     end
 end
