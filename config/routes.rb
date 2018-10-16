@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :quizzes
   root to: "students#index"
   devise_for :students
   resources :students
