@@ -10,6 +10,7 @@ class QuizzesController < ApplicationController
   # GET /quizzes/1
   # GET /quizzes/1.json
   def show
+    @questions = @quiz.questions
   end
 
   # GET /quizzes/new
@@ -56,7 +57,7 @@ class QuizzesController < ApplicationController
   def destroy
     @quiz.destroy
     respond_to do |format|
-      format.html { redirect_to quizzes_url, notice: 'Quiz was successfully destroyed.' }
+      format.html { redirect_to quizzes_url, notice: 'Quiz removido com sucesso.' }
       format.json { head :no_content }
     end
   end
