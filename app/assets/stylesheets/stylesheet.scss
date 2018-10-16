@@ -84,7 +84,7 @@
     
     @font-face {
         font-family: 'PressStart2P';
-        src: url('PressStart2P-Regular.ttf');
+        src: font-url('../fonts/PressStart2P-Regular.ttf');
     }
     
     
@@ -100,7 +100,7 @@
 
 */
 
-.login{
+.pagelogin{
     background-color: $oil;
 }
 
@@ -110,5 +110,33 @@
     border-radius: 5px;
     padding: 5px 10px;
     font-family: "PressStart2P";
+    margin-right: 15px;
+    padding: 10px;
 }
 
+.field-login, .actions-login{
+    display: inline;
+    padding: 10px;
+}
+.login{
+    float: right;
+    margin-top: 15px;
+}
+
+.pagelogin .icone{
+    width: 100px;
+    margin-left: 20px;
+    margin-top: -15px;
+    
+}
+
+.pagelogin .field-login input{
+    background-color: $oil;
+    border-radius: 5px;
+    border: 0.5px solid $grey;
+    padding: 10px;
+}
+
+.pagelogin .field-login input::placeholder{
+    color: $grey;
+}
