@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Título:</strong>
+  <%= @quiz.title %>
+</p>
+
+<p>
+  <strong>Descrição:</strong>
+  <%= @quiz.description %>
+</p>
+
+<%= link_to 'Editar', edit_quiz_path(@quiz) %> |
+<%= link_to 'Voltar', quizzes_path %>
+<%= link_to 'Adicionar Pergunta', new_quiz_question_path(@quiz) %>
+
+<h2>Perguntas do Quiz:</h2>
+<% @questions.each do |question| %>
+  <h3><%= link_to question.title, quiz_question_path(@quiz, question) %></h3>
+  <ol>
+    <% question.answers.each do |answer| %>
+      <li>
+        <%= answer.content %>
+      </li>
+    <% end %>
+  </ol>
+  <p>Resposta correta: <%= question.answer.content if !question.answer.nil? %></p>
+  <hr>
+<% end %>

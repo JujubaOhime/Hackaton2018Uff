@@ -1,0 +1,36 @@
+<%= form_with(model: question, local: true) do |form| %>
+  <% if question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(question.errors.count, "error") %> impediu esta pergunta de ser salva:</h2>
+
+      <ul>
+      <% question.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title, "Título" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :answer_id, "Resposta correta" %>
+    <%= form.select :answer_id, answer_options %>
+  </div>
+
+  <div class="field">
+    <%= form.label :explanation, "Explicação da Resposta" %>
+    <%= form.text_field :explanation %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :quiz_id, value: params[:quiz_id] %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
