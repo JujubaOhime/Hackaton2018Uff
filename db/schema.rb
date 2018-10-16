@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_16_154842) do
+ActiveRecord::Schema.define(version: 2018_10_16_220021) do
+
+  create_table "achievement_scores", force: :cascade do |t|
+    t.integer "score"
+    t.integer "achievement_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["achievement_id"], name: "index_achievement_scores_on_achievement_id"
+  end
+
+  create_table "achievements", force: :cascade do |t|
+    t.string "description"
+    t.string "title"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "answers", force: :cascade do |t|
     t.string "content"
@@ -38,6 +54,15 @@ ActiveRecord::Schema.define(version: 2018_10_16_154842) do
     t.integer "quantity_questions"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "student_achievements", force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "achievement_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["achievement_id"], name: "index_student_achievements_on_achievement_id"
+    t.index ["student_id"], name: "index_student_achievements_on_student_id"
   end
 
   create_table "students", force: :cascade do |t|
