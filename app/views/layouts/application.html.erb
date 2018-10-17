@@ -11,8 +11,10 @@
 
   <body>
     <%=render "layouts/header" %>
+    <% if !@hide_header %>
     <% if user_signed_in? %>
-      <%= link_to 'Log out', destroy_session_path(current_user), method: :delete %>
+      <button class="logout-button"><%= link_to 'Sair', destroy_session_path(current_user), class:"link-logout", method: :delete %></button>
+    <% end %>
     <% end %>
     <%= yield %>
     

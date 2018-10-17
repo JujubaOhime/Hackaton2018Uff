@@ -83,6 +83,7 @@
     $oil: #2D3142;
     $green: #63D761;
     $grey: #BDBDBD;
+    $red: #d14555;
     
     
     
@@ -141,14 +142,14 @@
     color: $grey;
 }
 
-h1{
+.pagelogin h1{
     font-size: 3em;
     color: $white;
     text-align: center;
     font-family: 'Press Start 2P', cursive;
 }
 
-h2{
+.pagelogin h2{
     font-size: 2em;
     color: $white;
     text-align: center;
@@ -222,6 +223,16 @@ h2{
     margin: 0 auto;
 }
 
+/* 
+
+##     ## ########    ###    ########  ######## ########  
+##     ## ##         ## ##   ##     ## ##       ##     ## 
+##     ## ##        ##   ##  ##     ## ##       ##     ## 
+######### ######   ##     ## ##     ## ######   ########  
+##     ## ##       ######### ##     ## ##       ##   ##   
+##     ## ##       ##     ## ##     ## ##       ##    ##  
+##     ## ######## ##     ## ########  ######## ##     ## 
+*/
 .header{
     background: $oil;
     margin: 0 auto;
@@ -232,3 +243,80 @@ h2{
 .header .icone{
     width: 50px;
 }
+
+
+
+
+/*
+###     ######  ##     ## #### ######## ##     ## ######## ##     ## ######## ##    ## ########  ######  
+## ##   ##    ## ##     ##  ##  ##       ##     ## ##       ###   ### ##       ###   ##    ##    ##    ## 
+##   ##  ##       ##     ##  ##  ##       ##     ## ##       #### #### ##       ####  ##    ##    ##       
+##     ## ##       #########  ##  ######   ##     ## ######   ## ### ## ######   ## ## ##    ##     ######  
+######### ##       ##     ##  ##  ##        ##   ##  ##       ##     ## ##       ##  ####    ##          ## 
+##     ## ##    ## ##     ##  ##  ##         ## ##   ##       ##     ## ##       ##   ###    ##    ##    ## 
+##     ##  ######  ##     ## #### ########    ###    ######## ##     ## ######## ##    ##    ##     ######  
+*/
+
+.achievements h1{
+    font-size: 3em;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.achievement{
+    background-color: $oil;
+    max-width: 70vw;
+    margin: 10px auto;
+    max-height: 60px;
+}
+
+.achievement h2{
+    font-size: 1.0em;
+    font-family: 'Press Start 2P', cursive;
+    color: $white;
+    text-transform: uppercase;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.achievement .icone{
+    float: left;
+    height: 40px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.achievement h3{
+    font-size: 0.95em;
+    color: $grey;
+}
+
+.logout-button{
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-family: 'Press Start 2P', cursive;
+    padding: 10px;
+    background: $red;
+
+}
+
+.logout-button:hover{
+    background-color: $oil;
+    text-decoration: none;
+    color: $red;
+    .link-logout{
+        text-decoration: none;
+        color: $red;
+    }
+}
+
+.link-logout{
+    text-decoration: none;
+    color: $oil;
+    text-transform: uppercase;
+}
+
+
