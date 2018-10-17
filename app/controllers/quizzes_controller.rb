@@ -68,16 +68,22 @@ class QuizzesController < ApplicationController
   def quiz_finished
     reward_score = false
     reward_quiz = false
-    if current_user.achievement_score_unlocked?
-      reward_score = true
-    end
-    if params[:right].to_i > (@quiz.questions.count / 2) && current_user.achievement_quiz_qty_unlocked?
-      reward_score = true
+    uq = UserQuiz.find_by(quiz_id: params[:id], user_id: current_user.id)
+    if !uq
+      UserQuiz.create(quiz_id: params[:id], user_id: current_user.id)
+      current_user.update_attribute(:score, current_user.score + params[:right].to_i)
+      if current_user.achievement_score_unlocked?
+        reward_score = true
+      end
+      if params[:right].to_i > (@quiz.questions.count / 2) && current_user.achievement_quiz_qty_unlocked?
+        reward_score = true
+      end
     end
     if reward_quiz || reward_score
-      flash[:notice] = "Você ganhou novas recompensas!"
+      render json: { res: 'Você conquistou recompensas' }
+    else
+      render json: { res: 'Você não conquistou recompensas' }
     end
-    redirect_to root_url
   end
 
   private

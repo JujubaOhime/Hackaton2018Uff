@@ -10,10 +10,10 @@ class User < ApplicationRecord
       candidate_achievements_ids = candidate_achievements.pluck(:achievement_id)
       new_achievements = false
       candidate_achievements_ids.each do |cai|
-        sa = userAchievement.find_by(achievement_id: cai, user_id: self.id)
+        sa = UserAchievement.find_by(achievement_id: cai, user_id: self.id)
         if !sa
           new_achievements = true
-          userAchievement.create(achievement_id: cai, user_id: self.id)
+          UserAchievement.create(achievement_id: cai, user_id: self.id)
         end
       end
       if new_achievements
@@ -27,16 +27,16 @@ class User < ApplicationRecord
   end
 
   def achievement_quiz_qty_unlocked?
-    quiz_qty = userQuiz.where(user_id: self.id).count()
+    quiz_qty = UserQuiz.where(user_id: self.id).count()
     candidate_achievements = QuizQtyAchievement.where("quiz_qty <= ?", quiz_qty).order(quiz_qty: :desc)
     if candidate_achievements
       candidate_achievements_ids = candidate_achievements.pluck(:achievement_id)
       new_achievements = false
       candidate_achievements_ids.each do |cai|
-        sa = userAchievement.find_by(achievement_id: cai, user_id: self.id)
+        sa = UserAchievement.find_by(achievement_id: cai, user_id: self.id)
         if !sa
           new_achievements = true
-          userAchievement.create(achievement_id: cai, user_id: self.id)
+          UserAchievement.create(achievement_id: cai, user_id: self.id)
         end
       end
       if new_achievements

@@ -264,13 +264,14 @@
       $.ajax({
           url: "/quiz_finished",
           type: 'get',
+          dataType:"json",
           data: {
             id: dados.id,
             right: dados.right
           },
         })
         .done(function (msg) {
-          alert("dsa");
+          alert(msg.res);
           $("#resultado").html(msg);
         })      
     }

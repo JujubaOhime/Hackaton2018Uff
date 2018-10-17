@@ -532,16 +532,16 @@ qs.save
     )
 end
 
-40.times do |i|
-    if i < 20
-        AchievementScore.create!(
-            achievement_id: (i+1),
-            score: 10*(i+1)
-        )
-    else
-        QuizQtyAchievement.create(
-            quiz_qty: i,
-            achievement_id: (i+1)
-        )
-    end
+20.times do |i|
+    AchievementScore.create!(
+        achievement_id: (i+1),
+        score: (i+1)
+    )
+end
+
+20.times do |i|
+    QuizQtyAchievement.create(
+        quiz_qty: (i+1),
+        achievement_id: 20+(i+1)
+    )
 end
