@@ -46,6 +46,7 @@ ans = Answer.create!(
 )
 
 qs.answer_id = ans.id
+qs.save
 
 qs = Question.create!(
     title: Faker::LeagueOfLegends.masteries,
@@ -67,6 +68,7 @@ ans = Answer.create!(
 )
 
 qs.answer_id = ans.id
+qs.save
 
 qs = Question.create!(
     title: Faker::LeagueOfLegends.masteries,
@@ -88,6 +90,7 @@ ans = Answer.create!(
 )
 
 qs.answer_id = ans.id
+qs.save
 
 q = Quiz.create!(
     title: Faker::LeagueOfLegends.champion,
@@ -115,6 +118,7 @@ ans = Answer.create!(
 )
 
 qs.answer_id = ans.id
+qs.save
 
 qs = Question.create!(
     title: Faker::LeagueOfLegends.masteries,
@@ -136,6 +140,7 @@ ans = Answer.create!(
 )
 
 qs.answer_id = ans.id
+qs.save
 
 qs = Question.create!(
     title: Faker::LeagueOfLegends.masteries,
@@ -157,6 +162,7 @@ ans = Answer.create!(
 )
 
 qs.answer_id = ans.id
+qs.save
 
 q = Quiz.create!(
     title: Faker::LeagueOfLegends.champion,
@@ -184,6 +190,7 @@ ans = Answer.create!(
 )
 
 qs.answer_id = ans.id
+qs.save
 
 qs = Question.create!(
     title: Faker::LeagueOfLegends.masteries,
@@ -205,6 +212,7 @@ ans = Answer.create!(
 )
 
 qs.answer_id = ans.id
+qs.save
 
 qs = Question.create!(
     title: Faker::LeagueOfLegends.masteries,
@@ -226,6 +234,7 @@ ans = Answer.create!(
 )
 
 qs.answer_id = ans.id
+qs.save
 
 q = Quiz.create!(
     title: Faker::LeagueOfLegends.champion,
@@ -253,6 +262,7 @@ ans = Answer.create!(
 )
 
 qs.answer_id = ans.id
+qs.save
 
 qs = Question.create!(
     title: Faker::LeagueOfLegends.masteries,
@@ -274,6 +284,7 @@ ans = Answer.create!(
 )
 
 qs.answer_id = ans.id
+qs.save
 
 qs = Question.create!(
     title: Faker::LeagueOfLegends.masteries,
@@ -295,6 +306,7 @@ ans = Answer.create!(
 )
 
 qs.answer_id = ans.id
+qs.save
 
 q = Quiz.create!(
     title: Faker::LeagueOfLegends.champion,
@@ -322,6 +334,7 @@ ans = Answer.create!(
 )
 
 qs.answer_id = ans.id
+qs.save
 
 qs = Question.create!(
     title: Faker::LeagueOfLegends.masteries,
@@ -343,6 +356,7 @@ ans = Answer.create!(
 )
 
 qs.answer_id = ans.id
+qs.save
 
 qs = Question.create!(
     title: Faker::LeagueOfLegends.masteries,
@@ -364,6 +378,7 @@ ans = Answer.create!(
 )
 
 qs.answer_id = ans.id
+qs.save
 
 q = Quiz.create!(
     title: Faker::LeagueOfLegends.champion,
@@ -391,6 +406,7 @@ ans = Answer.create!(
 )
 
 qs.answer_id = ans.id
+qs.save
 
 qs = Question.create!(
     title: Faker::LeagueOfLegends.masteries,
@@ -412,6 +428,7 @@ ans = Answer.create!(
 )
 
 qs.answer_id = ans.id
+qs.save
 
 qs = Question.create!(
     title: Faker::LeagueOfLegends.masteries,
@@ -433,6 +450,7 @@ ans = Answer.create!(
 )
 
 qs.answer_id = ans.id
+qs.save
 
 q = Quiz.create!(
     title: Faker::LeagueOfLegends.champion,
@@ -460,6 +478,7 @@ ans = Answer.create!(
 )
 
 qs.answer_id = ans.id
+qs.save
 
 qs = Question.create!(
     title: Faker::LeagueOfLegends.masteries,
@@ -481,6 +500,7 @@ ans = Answer.create!(
 )
 
 qs.answer_id = ans.id
+qs.save
 
 qs = Question.create!(
     title: Faker::LeagueOfLegends.masteries,
@@ -502,6 +522,7 @@ ans = Answer.create!(
 )
 
 qs.answer_id = ans.id
+qs.save
 
 40.times do |i|
     Achievement.create!(
