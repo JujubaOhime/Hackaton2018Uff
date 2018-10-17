@@ -334,12 +334,6 @@
     color: $grey;
 }
 
-.logout-button{
-
-
-
-}
-
 .logout-button:hover{
     background-color: $oil;
     text-decoration: none;
@@ -359,7 +353,6 @@
 
 .logout-button {
     padding: 10px;
-    background: $red;
     margin-top: 20px;
     margin-left: 20px;
     border: 1px solid $oil;
@@ -367,8 +360,192 @@
     background:$red;
     box-shadow:2px 2px 0 rgba(0,0,0,.5);
     display:inline-block;
-    font-size:0.5em;
-    padding:.5em 2em;
+    font-size:1em;
+    padding: 1em 2em;
+    text-decoration:none;
+  }
+
+  .logout-button:hover {
+
+    box-shadow:2px 2px 0 rgba(0,0,0,.5);
+  }
+
+  .logout-button{
+    transform: skew(-20deg);
+  }
+
+  .link-logout{
+    display:inline-block;
+    transform: skew(20deg);
+  }
+
+
+/*
+########  ########   #######  ######## #### ##       ######## 
+##     ## ##     ## ##     ## ##        ##  ##       ##       
+##     ## ##     ## ##     ## ##        ##  ##       ##       
+########  ########  ##     ## ######    ##  ##       ######   
+##        ##   ##   ##     ## ##        ##  ##       ##       
+##        ##    ##  ##     ## ##        ##  ##       ##       
+##        ##     ##  #######  ##       #### ######## ######## */
+
+
+.page-profile{
+    background-color: $oil;
+    height: 120vh;
+}
+
+.page-profile .center-left{
+    width: 45vw;
+    margin: 0px auto;
+    text-align: center;
+    float: left;
+    border-right: 1px solid $grey;
+}
+.page-profile .center-right{
+    margin: 0 auto;
+    width: 45vw;
+
+
+
+}
+
+.page-profile .center-center-right{
+    float: right;
+    width: 53vw;
+}
+.page-profile h2{
+    font-size: 1.5em;
+    color: $white;
+    margin-top: 2em;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.page-profile h3{
+    font-size: 1.2em;
+    color: $white;
+    margin-top: 2em;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.page-profile .select-titulo{
+    background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+    background-color:$grey;
+    height: 29px;
+    overflow: hidden;
+    width: 240px;
+    -webkit-appearance: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.9em;
+    text-indent: 10px;
+    color: $oil;
+}
+
+.page-profile .n_de_gem{
+    float: right;
+}
+.page-profile .numero_de_gems{
+    margin-top: 0px;
+    display: inline;
+}
+
+.page-profile .imagem-gem{
+    display: inline;
+}
+
+.page-profile .num-de-xp{
+    float: right;
+
+}
+
+.page-profile .texto-de-xp{
+    float: left;
+}
+
+
+.page-profile .rectangles{
+    position: relative;
+    z-index: 9;
+    background: $grey;
+    width:45vw;
+    height:34px;
+    margin-top: 110px;  
+    margin-bottom: 40px;
+}
+
+.page-profile .rectangles:before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 45%;
+    bottom: 0;
+    left: 0;
+    background: $green;
+
+    
+}
+
+.page-profile .linha-horizontal{
+    background: $grey;
+    width: 20vw;
+    height: 0.8px;
+    text-align: center;
+    margin: auto;
+}
+
+.page-profile .ultimas-conquistas{
+    text-align: center; 
+    margin-bottom: 20px;
+}
+.page-profile .icones{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.page-profile .icone{
+    display: inline;
+    height: 45px;
+    margin: auto 30px;
+    margin-bottom: 20px;
+}
+.page-profile .center{
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+
+.page-profile{
+.logout-button:hover{
+    background-color: $white;
+    text-decoration: none;
+    color: $green;
+    .link-logout{
+        text-decoration: none;
+        color: $green;
+    }
+}
+
+.link-logout{
+    text-decoration: none;
+    color: $white;
+    text-transform: uppercase;
+}
+
+
+.logout-button {
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border: 1px solid $oil;
+    font-family: 'Press Start 2P', cursive;
+    background:$green;
+    box-shadow:2px 2px 0 rgba(0,0,0,.5);
+    display:inline-block;
+    font-size:1em;
+    padding: 1em 2em;
     text-decoration:none;
   }
 
@@ -624,3 +801,12 @@
     margin: 0 auto 5px auto;
 }
 
+}
+
+.page-profile .center .logout-button{
+    margin-left: 0px;
+}
+
+.page-profile .link-perfil{
+    display: none;
+}
