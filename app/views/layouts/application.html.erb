@@ -13,8 +13,8 @@
     <%=render "layouts/header" %>
     <% if !@hide_header %>
       <% if user_signed_in? %>
-        <%= link_to 'Perfil', current_user, class:"link-ir-perfil" %>
-        <span class="logout-button"><%= link_to 'Sair', destroy_session_path(current_user), class:"link-logout", method: :delete %></span>
+        <span class="logout-button button-ir-perfil"><%= link_to 'Perfil', current_user, class:"link-ir-perfil link-logout" %></span>
+        <span class="logout-button-red"><%= link_to 'Sair', destroy_session_path(current_user), class:"link-logout-red", method: :delete %></span>
       <% end %>
     <% end %>
     <%= yield %>

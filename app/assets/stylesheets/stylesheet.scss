@@ -340,7 +340,7 @@
 
 }
 
-.logout-button:hover{
+.logout-button-red:hover{
     background-color: $oil;
     text-decoration: none;
     color: $red;
@@ -350,14 +350,14 @@
     }
 }
 
-.link-logout{
+.link-logout-red{
     text-decoration: none;
     color: $white;
     text-transform: uppercase;
 }
 
 
-.logout-button {
+.logout-button-red {
     padding: 10px;
     background: $red;
     margin-top: 20px;
@@ -372,16 +372,16 @@
     text-decoration:none;
   }
 
-  .logout-button:hover {
+  .logout-button-red:hover {
 
     box-shadow:2px 2px 0 rgba(0,0,0,.5);
   }
 
-  .logout-button{
+  .logout-button-red{
     transform: skew(-20deg);
   }
 
-  .link-logout{
+  .link-logout-red{
     display:inline-block;
     transform: skew(20deg);
   }
@@ -758,7 +758,7 @@
 
 
 
-.page-profile{
+
 .logout-button:hover{
     background-color: $white;
     text-decoration: none;
@@ -786,8 +786,8 @@
     background:$green;
     box-shadow:2px 2px 0 rgba(0,0,0,.5);
     display:inline-block;
-    font-size:1em;
-    padding: 1em 2em;
+    font-size:0.7em;
+    padding: 0.6em 1em;
     text-decoration:none;
   }
 
@@ -805,7 +805,6 @@
     transform: skew(20deg);
   }
 
-}
 
 .page-profile .center .logout-button{
     margin-left: 0px;
@@ -817,4 +816,80 @@
 
 .page-profile .link-ir-perfil{
     display: none;
+}
+
+.page-profile .button-ir-perfil{
+    display: none;
+}
+
+/*
+#### ##    ## ########  ######## ##     ##    ##     ##  ######  ##     ##    ###    ########  ####  #######   ######  
+ ##  ###   ## ##     ## ##        ##   ##     ##     ## ##    ## ##     ##   ## ##   ##     ##  ##  ##     ## ##    ## 
+ ##  ####  ## ##     ## ##         ## ##      ##     ## ##       ##     ##  ##   ##  ##     ##  ##  ##     ## ##       
+ ##  ## ## ## ##     ## ######      ###       ##     ##  ######  ##     ## ##     ## ########   ##  ##     ##  ######  
+ ##  ##  #### ##     ## ##         ## ##      ##     ##       ## ##     ## ######### ##   ##    ##  ##     ##       ## 
+ ##  ##   ### ##     ## ##        ##   ##     ##     ## ##    ## ##     ## ##     ## ##    ##   ##  ##     ## ##    ## 
+#### ##    ## ########  ######## ##     ##     #######   ######   #######  ##     ## ##     ## ####  #######   ######  
+*/
+
+.page-alunos .alunos{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.page-alunos .align-image{
+    text-align: center;
+    width: 30vw;
+}
+
+.page-alunos .icone-imagem{
+    width: auto;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.page-alunos h2{
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: $oil;
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+
+}
+
+.page-alunos .aluno-users{
+    text-align: center;
+    width: 279px;
+    display: grid;
+
+}
+
+.page-alunos h3{
+    font-size: 0.6em;
+    color: $oil;
+    font-family: 'Press Start 2P', cursive;
+    margin-bottom: 15px;
+}
+
+.page-alunos .links-perfil{
+    font-size: 0.5em;
+}
+
+.page-alunos .aluno{
+    text-align: center;
+    width: 300px;
+    display: contents;
+}
+
+.page-alunos h1{
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    color: $oil;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }

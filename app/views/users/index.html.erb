@@ -1,33 +1,21 @@
-<p id="notice"><%= notice %></p>
 
-<h1>users</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Email</th>
-      <th>Nascimento</th>
-      <th>Pontuação</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<body class="page-alunos">
+<h1>Usuários</h1>
+    <div class="alunos">
     <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.birth %></td>
-        <td><%= user.score %></td>
-        <td><%= link_to 'Mostrar Estudante', user %></td>
-        <td><%= link_to 'Editar Estudante', edit_user_path(user) %></td>
-        <td><%= link_to 'Excluir Estudante', user, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
-      </tr>
+      <div class="aluno-users">
+        <div class="align-image">
+        <%= image_tag("robot.svg", :alt => "imagem da pessoa", class:"icone-imagem") %>
+        </div>
+        <h2><%= user.name %></h2>
+        <h3><%= user.email %></h3>
+        <h3>12 anos de idade</h3>
+        <h3><%= link_to 'Mostrar Estudante', user, class:"links-perfil" %></h3>
+        <h3><%= link_to 'Editar Estudante', edit_user_path(user) , class:"links-perfil" %></h3>
+        <h3><%= link_to 'Excluir Estudante', user, method: :delete, data: { confirm: 'Tem certeza?' }, class:"links-perfil"%></h3>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
+  </div>
 <br>
-
-<%= link_to 'Adicionar Novo Estudante', new_user_path %>
+<span class="logout-button"><%= link_to 'Adicionar Novo Estudante', new_user_path, class:"link-logout"%></span>
+</body>
