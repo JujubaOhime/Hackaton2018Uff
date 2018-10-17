@@ -19,6 +19,8 @@
             <% @questions.each do |question| %>
             <% if counter < @questions.count() %>
             <li></li>
+            <% else %>
+            <input type="hidden" value="<%=counter%>" class="trigger">
             <% end %>
             <% counter += 1 %>
             <% end %>
@@ -92,6 +94,7 @@
     var current_fs, next_fs, previous_fs;
     var left, opacity, scale;
     var animating;
+    var loop = 0, trigger = $(".trigger").val();
 
     $(".previous").click(function () {
       if (animating) return false;
@@ -188,6 +191,13 @@
         $("#progressbar li")
           .eq($("fieldset").index(next_fs))
           .addClass("active");
+          loop += 1;
+          //
+          console.log(trigger);
+          console.log(loop);
+          if(trigger <= loop){
+            BD(answers);
+          }
 
         //show the next fieldset
         next_fs.show();
@@ -235,18 +245,34 @@
         scoreboard(false);
       }
     }
-    
+
     //Salva a pontuacao
     const answers = {
       right: 0,
-      error: 0
+      error: 0,
+      id: 1
     }
 
     //Marca a pontuacao dos jogadores
     function scoreboard(status) {
       status ? answers.right += 1 : answers.error += 1;
-      console.log(answers);
-      return true;
+      return true;      
+    }
+
+    //
+    function BD(dados) {            
+      $.ajax({
+          url: "quiz_finished",
+          type: 'get',
+          data: {
+            id: dados.id,
+            right: dados.right
+          },
+        })
+        .done(function (msg) {
+          alert("dsa");
+          $("#resultado").html(msg);
+        })      
     }
 
   });
