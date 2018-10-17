@@ -71,7 +71,7 @@ class QuizzesController < ApplicationController
     if current_user.achievement_score_unlocked?
       reward_score = true
     end
-    if params[:questions_correct].to_i > (@quiz.questions.count / 2) && current_user.achievement_quiz_qty_unlocked?
+    if params[:right].to_i > (@quiz.questions.count / 2) && current_user.achievement_quiz_qty_unlocked?
       reward_score = true
     end
     if reward_quiz || reward_score
