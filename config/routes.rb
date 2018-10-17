@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   get 'achievements', to: 'achievements#index', as: :achievements
   get 'achievements/:id', to: 'achievements#show', as: :show_achievement
 
-  root to: "static_page#home"
-  devise_for :users
+  root to: "quizzes#index"
+  devise_for :users, controllers: {
+    sessions: 'user/sessions'
+  }
   resources :users
   resources :answers, except: [:index, :new, :show, :edit]
 
