@@ -1,0 +1,8 @@
+<% if !@hide_header %>
+<nav class="header">
+    <% if student_signed_in? %>
+        <%= link_to 'Deslogar', destroy_session_path(current_student), method: :delete %>
+    <% end %>
+    <%= image_tag("logo.svg", :alt => "logo do sistema", class:"icone") %>
+</nav>
+<% end %>

@@ -10,9 +10,8 @@
   </head>
 
   <body>
-    <% if student_signed_in? %>
-      <%= link_to 'Log out', destroy_session_path(current_student), method: :delete %>
-    <% end %>
+  <%= render "layouts/header" %>
+   
     <%= yield %>
   </body>
 </html>

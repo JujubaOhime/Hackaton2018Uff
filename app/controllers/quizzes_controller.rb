@@ -11,6 +11,7 @@ class QuizzesController < ApplicationController
   # GET /quizzes/1.json
   def show
     @questions = @quiz.questions
+    @hide_header = true
   end
 
   # GET /quizzes/new

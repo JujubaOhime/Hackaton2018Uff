@@ -84,11 +84,30 @@
     $green: #63D761;
     $grey: #BDBDBD;
     
-    
-    
-    
  /*
- 
+
+##     ## ########    ###    ########  ######## ########  
+##     ## ##         ## ##   ##     ## ##       ##     ## 
+##     ## ##        ##   ##  ##     ## ##       ##     ## 
+######### ######   ##     ## ##     ## ######   ########  
+##     ## ##       ######### ##     ## ##       ##   ##   
+##     ## ##       ##     ## ##     ## ##       ##    ##  
+##     ## ######## ##     ## ########  ######## ##     ## 
+
+ */
+
+ .header{
+     background: $oil;
+     margin: 0 auto;
+    text-align: center;
+
+ }
+
+ .header .icone{
+     width: 50px;
+ }
+
+ /*
 ##        #######   ######   #### ##    ## 
 ##       ##     ## ##    ##   ##  ###   ## 
 ##       ##     ## ##         ##  ####  ## 
@@ -99,8 +118,9 @@
 
 */
 
-.pagelogin{
+body .pagelogin{
     background-color: $oil;
+    height: 100vh;
 }
 
 .buttons{
@@ -123,9 +143,9 @@
 }
 
 .pagelogin .icone{
-    width: 100px;
+    width: 50px;
     margin-left: 20px;
-    margin-top: -15px;
+    margin-top: 7px;
     
 }
 
@@ -162,9 +182,7 @@ h2{
     width: 60vw;
 }
 
-.body{
-    min-height: 900px;
-}
+
 
 .pagelogin .titulo-login-center{
     margin: auto;
