@@ -11,7 +11,7 @@ class StaticPageController < ApplicationController
 
   def logged_user
     if current_user
-      redirect_to root_url
+      redirect_to painel_aluno_path
     end
   end
 end
