@@ -4,7 +4,7 @@ class usersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = user.all
+    @users = User.all
   end
 
   # GET /users/1
@@ -14,7 +14,7 @@ class usersController < ApplicationController
 
   # GET /users/new
   def new
-    @user = user.new
+    @user = User.new
   end
 
   # GET /users/1/edit
@@ -24,7 +24,7 @@ class usersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = user.new(user_params)
+    @user = User.new(user_params)
 
     respond_to do |format|
       if @user.save
@@ -64,7 +64,7 @@ class usersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = user.find(params[:id])
+      @user = User.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

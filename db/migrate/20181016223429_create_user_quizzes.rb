@@ -1,4 +1,4 @@
-class CreateuserQuizzes < ActiveRecord::Migration[5.2]
+class CreateUserQuizzes < ActiveRecord::Migration[5.2]
   def change
     create_table :user_quizzes do |t|
       t.references :user, foreign_key: true

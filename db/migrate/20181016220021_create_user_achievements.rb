@@ -1,4 +1,4 @@
-class CreateuserAchievements < ActiveRecord::Migration[5.2]
+class CreateUserAchievements < ActiveRecord::Migration[5.2]
   def change
     create_table :user_achievements do |t|
       t.references :user, foreign_key: true
