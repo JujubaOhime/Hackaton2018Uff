@@ -1,41 +1,65 @@
-<h1>StaticPage#home</h1>
-<p>Find me in app/views/static_page/home.html.erb</p>
-<h2>Registro de Estudante</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :name, "Nome" %><br />
-    <%= f.email_field :name, autofocus: true, autocomplete: "name" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email, "Email" %><br />
-    <%= f.email_field :email, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :birth, "Nascimento" %><br />
-    <%= f.date_field :birth, autocomplete: "birth" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password, "Senha" %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirmação de Senha" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Registrar" %>
+<body class="pagelogin">
+<%= form_for(@student, url: registration_path(@student)) do |f| %>
+  <%= image_tag("nyancat.png", :alt => "ícone do nyancat", class:"icone") %>
+  <div class="login">
+    <div class="field-login">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email"  %>
+    </div>  
+    <div class="field-login">
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: "Senha" %>
+    </div>
+    <div class="actions-login">
+      <%= f.submit "Logar", class:'buttons' %>
+    </div>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+
+  
+<%= form_for(:student, url: registration_path(:student)) do |f| %>
+  <div class="titulo-login">
+    <div class="titulo-login-center">
+    <h1>Nome do</h1> <h1>sistema</h1>
+      <h2>Frase bonita do sistema</h2>
+    </div>
+  </div>
+  <div class="cadastro">
+  <div class="center-cadastrao">
+        <h2 class="cadastro-h2">Crie sua conta</h2>
+    <div class="center-cadastro">
+
+      <div class="field-cadastro-1">
+        <%= f.label :name, "Nome" %><br>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+      </div>
+      <div class="field-cadastro">
+        <%= f.label :email, "Email" %><br>
+        <%= f.email_field :email, autocomplete: "email" %>
+      </div>
+
+      <div class="field-cadastro">
+        <%= f.label :birth, "Nascimento" %><br>
+        <%= f.date_field :birth, autocomplete: "birth" %>
+      </div>
+
+      <div class="field-cadastro">
+        <%= f.label :password, "Senha" %><br>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em><br>
+        <% end %>
+        <%= f.password_field :password, autocomplete: "new-password" %><br>
+      </div>
+
+      <div class="field-cadastro">
+        <%= f.label :password_confirmation, "Confirmação de Senha" %><br>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+
+      <div class="actions-cadastro">
+        <%= f.submit "Criar Conta", class:'buttons' %>
+      </div>
+      </div>
+  </div>
+<% end %>
+
+</body>

@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
-  get 'static_page/home'
-  root to: "students#index"
+  root to: "static_page#home"
   devise_for :students
   resources :students
+  resources :answers, except: [:index, :new, :show, :edit]
 
   resources :quizzes do
-    resources :questions, except: [:index]
+    resources :questions, except: [:edit, :index, :show]
   end
 
-  resources :questions do
+  resources :questions, except: [:new, :index] do
     resources :answers, except: [:show, :index]
   end
 
