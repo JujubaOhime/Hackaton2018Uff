@@ -57,7 +57,7 @@
 
           <!--RESPOSTAS-->
           <div class="container lts hidden">
-            <h2>Explicação</h2>
+            <h2>Resposta</h2>
             <hr>
             <h3 class="fs-title">
               <%= question.answer.content if !question.answer.nil? %>
@@ -237,7 +237,7 @@
     const answers = {
       right: 0,
       error: 0,
-      id: 1
+      id: <%= @quiz.id %>
     }
 
     //Marca a pontuacao dos jogadores
@@ -258,12 +258,15 @@
           },
         })
         .done(function (msg) {
-          alert(msg.res);
-          if(msg.res === 'Você conquistou novas recompensas') {
-            window.location.href = '/achievements';
-          } else {
-            window.location.href = '/quizzes';
-          }
+          swal(msg.res, "", "success");
+          setTimeout(
+            function() {
+              if(msg.res === 'Você conquistou novas recompensas') {
+                window.location.href = '/achievements';
+              } else {
+                window.location.href = '/quizzes';
+              }
+            }, 5000);
         })      
     }
 
