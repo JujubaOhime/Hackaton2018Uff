@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :questions, except: [:edit, :index, :show]
   end
 
-  post 'quiz_finished', to: 'quizzes#quiz_finished', as: :quiz_finished
+  get 'quiz_finished', to: 'quizzes#quiz_finished', as: :quiz_finished
 
   resources :questions, except: [:new, :index] do
     resources :answers, except: [:show, :index]
