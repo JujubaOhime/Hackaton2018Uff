@@ -160,7 +160,7 @@ h2{
     float: left;
     height: 400px;
     display: flex;
-    width: 67vw;
+    width: 60vw;
 }
 
 .body{
@@ -173,13 +173,15 @@ h2{
 
 .pagelogin .cadastro{
     float: right;
-    width: 29vw;
+    width: 36vw;
     display: flex;
     margin-right: 10px;
 }
 
 .pagelogin .center-cadastro{
     margin: 0px auto;
+    display: grid;
+    width: 240px;
 }
 .pagelogin label{
     color: $white;
@@ -192,8 +194,8 @@ h2{
 }
 
 .pagelogin #student_birth{
-    width: 100%;
     color: $white;
+    width: 100%;
 }
 
 .pagelogin #student_password_confirmation{
@@ -203,4 +205,18 @@ h2{
 .pagelogin .actions-cadastro .buttons{
     width: 100%;
     margin-top: 10px;
+}
+
+.pagelogin .cadastro-h2{
+    text-transform: uppercase;
+}
+
+.pagelogin .field-cadastro input, .pagelogin .field-cadastro-1 input{
+    width: 100%;
+}
+.pagelogin .field-cadastro, .pagelogin .field-cadastro-1{
+    
+}
+.pagelogin .center-cadastrao{
+    margin: 0 auto;
 }
