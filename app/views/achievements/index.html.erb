@@ -1,12 +1,19 @@
 <div class="achievements">
-
-
-<% @achievements.each do |ach| %>
-    <div class="achievement">
-    <%= image_tag("medalha.svg", :alt => "ícone de medalha", class:"icone") %>
-    <h2><%= ach.title %></h2>
-    <h3><%= ach.description %></h3>
-    <br>
-    </div>
-<% end %>
+    <% @achievements.each do |ach| %>
+        <% if UserAchievement.find_by(user_id: current_user.id, achievement_id: ach.id) %>
+            <div class="achievement">
+                <%= image_tag("medalha.svg", :alt => "ícone de medalha", class:"icone") %>
+                <h2><%= ach.title %></h2>
+                <h3><%= ach.description %></h3>
+                <br>
+            </div>
+        <% else %>
+            <div class="achievement-locked">
+                <%= image_tag("medalha.svg", :alt => "ícone de medalha", class:"icone") %>
+                <h2><%= ach.title %></h2>
+                <h3><%= ach.description %></h3>
+                <br>
+            </div>
+        <% end %>
+    <% end %>
 </div>

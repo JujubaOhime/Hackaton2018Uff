@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :user_achievements
+  has_many :achievements, through: :user_achievements
+
   def achievement_score_unlocked?
     candidate_achievements = AchievementScore.where("score <= ?", self.score).order(score: :desc)
     if candidate_achievements
