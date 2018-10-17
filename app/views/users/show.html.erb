@@ -1,24 +1,61 @@
-<p id="notice"><%= notice %></p>
+<body class="page-profile">
+<span>
+<div class="links">
+<!--<span class="logout-button"><%= link_to 'Editar', edit_user_path(@user), class:"link-logout" %> </span>
+<span class="logout-button"><%= link_to 'Voltar', users_path,  class:"link-logout" %></span>-->
+</div>
+<div class="center-left">
+<%= image_tag("perfil.png", :alt => "imagem da personagem", class:"imagem-perfil") %>
+<br>
+<span class="logout-button"><a href="#" class="link-logout">Loja</a></span>
+<span class="logout-button"><a href="#" class="link-logout">Skills</a></span>
+</div>
+<div class="center-center-right">
+<div class="center-right">
+  <select class="select-titulo">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="opel">Opel</option>
+    <option value="audi">Audi</option>
+  </select> 
+  <div class="n_de_gem">
+    <h3 class="numero_de_gems">120</h3>
+    <%= image_tag("gem.png", :alt => "imagem de uma gem verde", class:"imagem-gem") %>
+  </div>
+  <h2>
+    <%= @user.name %> LVL 7
+  </h2>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @user.name %>
-</p>
+  <!--<p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
+  -->
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  <h3>
+    Aniversário:
+    <%= @user.birth %>
+  </h3>
+  <h3>
+    Idade:
+    12 anos
+  </h3>
+  <h3>
+    <%= @user.score %>
+  </h3>
 
-<p>
-  <strong>Nascimento:</strong>
-  <%= @user.birth %>
-</p>
-
-<p>
-  <strong>Pontuação:</strong>
-  <%= @user.score %>
-</p>
-
-<%= link_to 'Editar', edit_user_path(@user) %> |
-<%= link_to 'Voltar', users_path %>
+  <h3 class="texto-de-xp">Experiência</h3>
+  <h3 class="num-de-xp">110/200</h3>
+  <div class="rectangles"></div>
+  <div class="linha-horizontal"></div>
+  <h3 class="ultimas-conquistas">Últimas Conquistas:</h3>
+  <div class="icones">
+  <%= image_tag("medalha.svg", :alt => "ícone de medalha", class:"icone") %>
+  <%= image_tag("medalha.svg", :alt => "ícone de medalha", class:"icone") %>
+  <%= image_tag("medalha.svg", :alt => "ícone de medalha", class:"icone") %>
+  </div>
+  <div class="center">
+  <span class="logout-button"><a href="#" class="link-logout">Ver mais</a></span>
+  </div>
+</div>
+</body>
