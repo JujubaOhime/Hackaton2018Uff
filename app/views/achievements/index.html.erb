@@ -1,7 +1,12 @@
-<h1>Achievements</h1>
+<div class="achievements">
+
 
 <% @achievements.each do |ach| %>
-    <p>Title: <%= ach.title %></p>
-    <p>Description: <%= ach.description %></p>
+    <div class="achievement">
+    <%= image_tag("medalha.svg", :alt => "ícone de medalha", class:"icone") %>
+    <h2><%= ach.title %></h2>
+    <h3><%= ach.description %></h3>
     <br>
+    </div>
 <% end %>
+</div>
