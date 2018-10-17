@@ -1,21 +1,25 @@
 <body class="page-alunos">
 <div class="alunos">
-    <div class="aluno">
-        <div class="align-image">
-        <div class="square">
-            <%= image_tag("person.png", :alt => "imagem da pessoa", class:"icone-imagem icone-menu") %>
-             </div>  
-                <h2 class="menu">PERFIL</h2>
+    <%= link_to current_user do %>
+        <div class="aluno">
+            <div class="align-image">
+            <div class="square">
+                <%= image_tag("person.png", :alt => "imagem da pessoa", class:"icone-imagem icone-menu") %>
+                </div>  
+                    <h2 class="menu">PERFIL</h2>
+            </div>
         </div>
-    </div>
-    <div class="aluno">
-        <div class="align-image">
-        <div class="square">
-            <%= image_tag("estudos.png", :alt => "imagem de livro", class:"icone-imagem icone-menu") %>
+    <% end %>
+    <%= link_to quizzes_path do %>
+        <div class="aluno">
+            <div class="align-image">
+            <div class="square">
+                <%= image_tag("estudos.png", :alt => "imagem de livro", class:"icone-imagem icone-menu") %>
+            </div>
+                    <h2 class="menu">ESTUDOS</h2>
+            </div>
         </div>
-                <h2 class="menu">ESTUDOS</h2>
-        </div>
-    </div>
+    <% end %>
     <div class="aluno">
         <div class="align-image">
         <div class="square">

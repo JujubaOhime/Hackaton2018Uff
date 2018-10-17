@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'achievements', to: 'achievements#index', as: :achievements
   get 'achievements/:id', to: 'achievements#show', as: :show_achievement
 
-  root to: "quizzes#index"
+  root to: "static_page#painel_aluno"
   devise_for :users, controllers: {
     sessions: 'user/sessions'
   }
