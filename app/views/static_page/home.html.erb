@@ -1,10 +1,18 @@
+<style>
+  body {
+    overflow: hidden;
+  }  
+</style>
+
+
+
 <body class="pagelogin">
-<%= form_for(@student, url: registration_path(@student)) do |f| %>
+  <%= form_for(@student, url: registration_path(@student)) do |f| %>
   <%= image_tag("nyancat.png", :alt => "ícone do nyancat", class:"icone") %>
   <div class="login">
     <div class="field-login">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email"  %>
-    </div>  
+    </div>
     <div class="field-login">
       <%= f.password_field :password, autocomplete: "current-password", placeholder: "Senha" %>
     </div>
@@ -12,54 +20,91 @@
       <%= f.submit "Logar", class:'buttons' %>
     </div>
   </div>
-<% end %>
+  <% end %>
 
 
-  
-<%= form_for(:student, url: registration_path(:student)) do |f| %>
+
+  <%= form_for(:student, url: registration_path(:student)) do |f| %>
   <div class="titulo-login">
     <div class="titulo-login-center">
-    <h1>Nome do</h1> <h1>sistema</h1>
+      <h1>Nome do</h1>
+      <h1>sistema</h1>
       <h2>Frase bonita do sistema</h2>
     </div>
   </div>
   <div class="cadastro">
-  <div class="center-cadastrao">
-        <h2 class="cadastro-h2">Crie sua conta</h2>
-    <div class="center-cadastro">
+    <div class="center-cadastrao">
+      <h2 class="cadastro-h2">Crie sua conta</h2>
+      <div class="center-cadastro">
 
-      <div class="field-cadastro-1">
-        <%= f.label :name, "Nome" %><br>
-        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-      </div>
-      <div class="field-cadastro">
-        <%= f.label :email, "Email" %><br>
-        <%= f.email_field :email, autocomplete: "email" %>
-      </div>
+        <div class="field-cadastro-1">
+          <%= f.label :name, "Nome" %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+        </div>
+        <div class="field-cadastro">
+          <%= f.label :email, "Email" %><br>
+          <%= f.email_field :email, autocomplete: "email" %>
+        </div>
 
-      <div class="field-cadastro">
-        <%= f.label :birth, "Nascimento" %><br>
-        <%= f.date_field :birth, autocomplete: "birth" %>
-      </div>
+        <div class="field-cadastro">
+          <%= f.label :birth, "Nascimento" %><br>
+          <%= f.date_field :birth, autocomplete: "birth" %>
+        </div>
 
-      <div class="field-cadastro">
-        <%= f.label :password, "Senha" %><br>
-        <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em><br>
-        <% end %>
-        <%= f.password_field :password, autocomplete: "new-password" %><br>
-      </div>
+        <div class="field-cadastro">
+          <%= f.label :password, "Senha" %><br>
+          <% if @minimum_password_length %>
+          <em>(
+            <%= @minimum_password_length %> characters minimum)</em><br>
+          <% end %>
+          <%= f.password_field :password, autocomplete: "new-password" %><br>
+        </div>
 
-      <div class="field-cadastro">
-        <%= f.label :password_confirmation, "Confirmação de Senha" %><br>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-      </div>
+        <div class="field-cadastro">
+          <%= f.label :password_confirmation, "Confirmação de Senha" %><br>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
 
-      <div class="actions-cadastro">
-        <%= f.submit "Criar Conta", class:'buttons' %>
+        <div class="actions-cadastro">
+          <%= f.submit "Criar Conta", class:'buttons' %>
+        </div>
       </div>
-      </div>
-  </div>
-<% end %>
+    </div>
+    <% end %>
 
+    <section class="animacao">
+      <div class="cont"></div>
+      <div class="ship">
+        <div class="coil"></div>
+        <div class="secondary-hull"></div>
+        <div class="main-hull"></div>
+      </div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+    </section>
 </body>
