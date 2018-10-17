@@ -109,9 +109,18 @@
     border: 0.5px solid $grey;
     border-radius: 5px;
     padding: 5px 10px;
-    font-family: "PressStart2P";
+    font-family: "Press Start 2P";
     margin-right: 15px;
     padding: 10px;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: $oil;
+}
+
+.buttons:hover{
+    background-color: $white;
+    color: $green;
+    border: 0.5px solid $oil;
 }
 
 .field-login, .actions-login{
@@ -300,6 +309,7 @@
     font-family: 'Press Start 2P', cursive;
     padding: 10px;
     background: $red;
+    border: 2px solid $oil;
 
 }
 
