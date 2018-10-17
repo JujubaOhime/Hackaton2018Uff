@@ -272,7 +272,11 @@
         })
         .done(function (msg) {
           alert(msg.res);
-          $("#resultado").html(msg);
+          if(msg.res === 'Você conquistou novas recompensas') {
+            window.location.href = '/achievements';
+          } else {
+            window.location.href = '/quizzes';
+          }
         })      
     }
 

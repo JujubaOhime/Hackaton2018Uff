@@ -80,9 +80,9 @@ class QuizzesController < ApplicationController
       end
     end
     if reward_quiz || reward_score
-      render json: { res: 'Você conquistou recompensas' }
+      render json: { res: 'Você conquistou novas recompensas' }
     else
-      render json: { res: 'Você não conquistou recompensas' }
+      render json: { res: 'Você não conquistou novas recompensas' }
     end
   end
 
