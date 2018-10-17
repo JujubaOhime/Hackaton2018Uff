@@ -1,47 +1,47 @@
 require "application_system_test_case"
 
-class StudentsTest < ApplicationSystemTestCase
+class usersTest < ApplicationSystemTestCase
   setup do
-    @student = students(:one)
+    @user = users(:one)
   end
 
   test "visiting the index" do
-    visit students_url
-    assert_selector "h1", text: "Students"
+    visit users_url
+    assert_selector "h1", text: "users"
   end
 
-  test "creating a Student" do
-    visit students_url
-    click_on "New Student"
+  test "creating a user" do
+    visit users_url
+    click_on "New user"
 
-    fill_in "Birth", with: @student.birth
-    fill_in "Name", with: @student.name
-    fill_in "Score", with: @student.score
-    click_on "Create Student"
+    fill_in "Birth", with: @user.birth
+    fill_in "Name", with: @user.name
+    fill_in "Score", with: @user.score
+    click_on "Create user"
 
-    assert_text "Student was successfully created"
+    assert_text "user was successfully created"
     click_on "Back"
   end
 
-  test "updating a Student" do
-    visit students_url
+  test "updating a user" do
+    visit users_url
     click_on "Edit", match: :first
 
-    fill_in "Birth", with: @student.birth
-    fill_in "Name", with: @student.name
-    fill_in "Score", with: @student.score
-    click_on "Update Student"
+    fill_in "Birth", with: @user.birth
+    fill_in "Name", with: @user.name
+    fill_in "Score", with: @user.score
+    click_on "Update user"
 
-    assert_text "Student was successfully updated"
+    assert_text "user was successfully updated"
     click_on "Back"
   end
 
-  test "destroying a Student" do
-    visit students_url
+  test "destroying a user" do
+    visit users_url
     page.accept_confirm do
       click_on "Destroy", match: :first
     end
 
-    assert_text "Student was successfully destroyed"
+    assert_text "user was successfully destroyed"
   end
 end

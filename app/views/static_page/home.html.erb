@@ -7,7 +7,7 @@
 
 
 <body class="pagelogin">
-  <%= form_for(@student, url: session_path(@student)) do |f| %>
+  <%= form_for(@user, url: session_path(@user)) do |f| %>
   <%= image_tag("nyancat.png", :alt => "ícone do nyancat", class:"icone") %>
   <div class="login">
     <div class="field-login">
@@ -24,7 +24,7 @@
 
 
 
-  <%= form_for(:student, url: registration_path(:student)) do |f| %>
+  <%= form_for(:user, url: registration_path(:user)) do |f| %>
   <div class="titulo-login">
     <div class="titulo-login-center">
       <h1>Nome do</h1>

@@ -1,48 +1,48 @@
 require 'test_helper'
 
-class StudentsControllerTest < ActionDispatch::IntegrationTest
+class usersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @student = students(:one)
+    @user = users(:one)
   end
 
   test "should get index" do
-    get students_url
+    get users_url
     assert_response :success
   end
 
   test "should get new" do
-    get new_student_url
+    get new_user_url
     assert_response :success
   end
 
-  test "should create student" do
-    assert_difference('Student.count') do
-      post students_url, params: { student: { birth: @student.birth, name: @student.name, score: @student.score } }
+  test "should create user" do
+    assert_difference('user.count') do
+      post users_url, params: { user: { birth: @user.birth, name: @user.name, score: @user.score } }
     end
 
-    assert_redirected_to student_url(Student.last)
+    assert_redirected_to user_url(user.last)
   end
 
-  test "should show student" do
-    get student_url(@student)
+  test "should show user" do
+    get user_url(@user)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_student_url(@student)
+    get edit_user_url(@user)
     assert_response :success
   end
 
-  test "should update student" do
-    patch student_url(@student), params: { student: { birth: @student.birth, name: @student.name, score: @student.score } }
-    assert_redirected_to student_url(@student)
+  test "should update user" do
+    patch user_url(@user), params: { user: { birth: @user.birth, name: @user.name, score: @user.score } }
+    assert_redirected_to user_url(@user)
   end
 
-  test "should destroy student" do
-    assert_difference('Student.count', -1) do
-      delete student_url(@student)
+  test "should destroy user" do
+    assert_difference('user.count', -1) do
+      delete user_url(@user)
     end
 
-    assert_redirected_to students_url
+    assert_redirected_to users_url
   end
 end
