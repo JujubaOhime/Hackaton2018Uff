@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'user/sessions'
   }
+
+  get 'painel', to: 'static_page#painel_aluno', as: 'painel_aluno'
+  
   resources :users
   resources :answers, except: [:index, :new, :show, :edit]
 

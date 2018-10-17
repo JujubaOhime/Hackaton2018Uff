@@ -893,3 +893,35 @@
     margin-bottom: 20px;
     text-transform: uppercase;
 }
+
+.square{
+    margin: 0 auto;
+    width: 106px;
+    height: 106px;
+    background: $green;
+    transform: rotate(45deg);
+    margin-top: 25px;
+    display: table;
+}
+
+.page-alunos .icone-menu{
+    margin-bottom: 0px;
+    transform: rotate(-45deg);
+    display: table-cell;
+    position: absolute;
+    vertical-align: middle;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+
+.square:hover{
+
+}
+
+.page-alunos .menu{
+    margin-top: 40px;
+
+}
