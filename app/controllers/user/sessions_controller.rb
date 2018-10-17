@@ -5,9 +5,11 @@ class User::SessionsController < Devise::SessionsController
   before_action :logged_user, only: :new
 
   # GET /resource/sign_in
-  # def new
+  def new
+    @user = User.new
+    render 'static_page/home'
   #   super
-  # end
+  end
 
   # POST /resource/sign_in
   # def create
