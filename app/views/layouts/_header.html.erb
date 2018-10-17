@@ -1,0 +1,7 @@
+    <nav class="header">
+    <% if !@hide_header %>
+        <% if student_signed_in? %>
+            <%= image_tag("logo.svg", :alt => "ícone da logo", class:"icone") %>
+        <% end %>
+    <% end %>
+    </nav>

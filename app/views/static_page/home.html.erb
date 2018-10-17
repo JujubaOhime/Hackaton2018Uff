@@ -8,7 +8,7 @@
 
 <body class="pagelogin">
   <%= form_for(@student, url: session_path(@student)) do |f| %>
-  <%= image_tag("nyancat.png", :alt => "ícone do nyancat", class:"icone") %>
+  <%= image_tag("logo.svg", :alt => "ícone da logo", class:"icone") %>
   <div class="login">
     <div class="field-login">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email"  %>

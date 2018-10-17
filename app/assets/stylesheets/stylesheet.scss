@@ -123,9 +123,9 @@
 }
 
 .pagelogin .icone{
-    width: 100px;
+    width: 50px;
     margin-left: 20px;
-    margin-top: -15px;
+    margin-top: 7px;
     
 }
 
@@ -134,6 +134,7 @@
     border-radius: 5px;
     border: 0.5px solid $grey;
     padding: 10px;
+    color: $white;
 }
 
 .pagelogin .field-login input::placeholder{
@@ -212,10 +213,22 @@ h2{
 
 .pagelogin .field-cadastro input, .pagelogin .field-cadastro-1 input{
     width: 100%;
+    color: $white;
 }
 .pagelogin .field-cadastro, .pagelogin .field-cadastro-1{
     
 }
 .pagelogin .center-cadastrao{
     margin: 0 auto;
+}
+
+.header{
+    background: $oil;
+    margin: 0 auto;
+   text-align: center;
+
+}
+
+.header .icone{
+    width: 50px;
 }
