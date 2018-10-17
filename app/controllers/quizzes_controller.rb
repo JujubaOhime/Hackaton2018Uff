@@ -1,5 +1,5 @@
 class QuizzesController < ApplicationController
-  before_action :set_quiz, only: [:show, :edit, :update, :destroy]
+  before_action :set_quiz, only: [:show, :edit, :update, :destroy, :quiz_finished]
 
   # GET /quizzes
   # GET /quizzes.json
@@ -60,6 +60,21 @@ class QuizzesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to quizzes_url, notice: 'Quiz removido com sucesso.' }
       format.json { head :no_content }
+    end
+  end
+
+  # POST quizzes/:questions_correct/:id
+  def quiz_finished
+    reward_score = false
+    reward_quiz = false
+    if current_user.achievement_score_unlocked?
+      reward_score = true
+    end
+    if params[:questions_correct].to_i > (@quiz.questions.count / 2) && current_user.achievement_quiz_qty_unlocked?
+      reward_score = true
+    end
+    if reward_quiz && reward_score
+      flash[:notice] = "Você ganhou novas recompensas!"
     end
   end
 
