@@ -1,15 +1,16 @@
-<style>
-  body {
-	background: gray !important;
-	font-family: montserrat, arial, verdana;
-}
-</style>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 <section class="page_quizz">
   <% counter = 1 %>
   <section class="step_quiz">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <div class="container-fluid">
+      <!--EXIT-->
+      <div class="row">
+        <!--Button Exit-->
+        <span class="logout-button">
+          <%= link_to 'Voltar', quizzes_path, class:"link-logout"%>
+        </span>
+      </div>
+
       <!-- multistep form -->
       <form id="msform">
         <div class="container">
@@ -25,23 +26,7 @@
             <% counter += 1 %>
             <% end %>
           </ul>
-          <div class="row">
-            <!--Button Exit-->
-            <%= link_to 'Voltar', quizzes_path, class:"btn btn-danger btn-lg"%>
-          </div>
         </div>
-        <p id="notice">
-          <%= notice %>
-        </p>
-        <p>
-          <strong>Título:</strong>
-          <%= @quiz.title %>
-        </p>
-
-        <p>
-          <strong>Descrição:</strong>
-          <%= @quiz.description %>
-        </p>
         <!-----------START LOOPING------------------->
         <% counter = 0 %>
         <% @questions.each do |question| %>
@@ -50,32 +35,33 @@
           <!--PERGUNTAS-->
           <div class="container lts">
             <h2 class="fs-title">
-              <%= link_to question.title, quiz_question_path(@quiz, question) %>
+              <%= question.title %>
             </h2>
           </div>
 
           <!-- Multiple Radios -->
-          <ul>
-
-            <% question.answers.each do |answer| %>
-            <li>
-              <input type="radio" name="respostas<%= counter %>" value="<%= answer.content %>" required>
-              <%= answer.content %>
-            </li>
-            <% end %>
-            <input type="hidden" class="rspt" value="<%= question.answer.content %>">
-          </ul>
-          <!--Navegacao-->
+          <div class="left-options">
+            <ul>
+              <% question.answers.each do |answer| %>
+              <li>
+                <input type="radio" name="respostas<%= counter %>" value="<%= answer.content %>" required>
+                <%= answer.content %>
+              </li>
+              <% end %>
+              <input type="hidden" class="rspt" value="<%= question.answer.content %>">
+            </ul>
+          </div>
+          <!--Navegacao-->          
           <input type="button" name="next" class="action-button nxt" data-step="step<%= counter %>" value="Responder" />
           <!--Navegacao-->
 
           <!--RESPOSTAS-->
           <div class="container lts hidden">
-            <h1>Explicação</h1>
+            <h2>Explicação</h2>
             <hr>
-            <h2 class="fs-title">
+            <h3 class="fs-title">
               <%= question.answer.content if !question.answer.nil? %>
-            </h2>
+            </h3>
           </div>
         </fieldset>
         <% counter += 1 %>
@@ -94,7 +80,8 @@
     var current_fs, next_fs, previous_fs;
     var left, opacity, scale;
     var animating;
-    var loop = 0, trigger = $(".trigger").val();
+    var loop = 0,
+      trigger = $(".trigger").val();
 
     $(".previous").click(function () {
       if (animating) return false;
@@ -191,13 +178,13 @@
         $("#progressbar li")
           .eq($("fieldset").index(next_fs))
           .addClass("active");
-          loop += 1;
-          //
-          console.log(trigger);
-          console.log(loop);
-          if(trigger <= loop){
-            BD(answers);
-          }
+        loop += 1;
+        //
+        console.log(trigger);
+        console.log(loop);
+        if (trigger <= loop) {
+          BD(answers);
+        }
 
         //show the next fieldset
         next_fs.show();
@@ -256,11 +243,11 @@
     //Marca a pontuacao dos jogadores
     function scoreboard(status) {
       status ? answers.right += 1 : answers.error += 1;
-      return true;      
+      return true;
     }
 
     //
-    function BD(dados) {            
+    function BD(dados) {
       $.ajax({
           url: "/quiz_finished",
           type: 'get',

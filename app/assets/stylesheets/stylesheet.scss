@@ -14,6 +14,7 @@
  *= require_self
  */
  @import "bootstrap";
+ @import url('https://fonts.googleapis.com/css?family=Share+Tech');
  @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 /*
  ########  ########  ######  ######## ######## 
@@ -334,13 +335,8 @@
 }
 
 .logout-button{
-    border-radius: 5px;
-    margin-top: 20px;
-    margin-left: 20px;
-    font-family: 'Press Start 2P', cursive;
-    padding: 10px;
-    background: $red;
-    border: 2px solid $oil;
+
+
 
 }
 
@@ -356,8 +352,275 @@
 
 .link-logout{
     text-decoration: none;
-    color: $oil;
+    color: $white;
     text-transform: uppercase;
 }
 
+
+.logout-button {
+    padding: 10px;
+    background: $red;
+    margin-top: 20px;
+    margin-left: 20px;
+    border: 1px solid $oil;
+    font-family: 'Press Start 2P', cursive;
+    background:$red;
+    box-shadow:2px 2px 0 rgba(0,0,0,.5);
+    display:inline-block;
+    font-size:0.5em;
+    padding:.5em 2em;
+    text-decoration:none;
+  }
+
+  .logout-button:hover {
+
+    box-shadow:2px 2px 0 rgba(0,0,0,.5);
+  }
+
+  .logout-button{
+    transform: skew(-20deg);
+  }
+
+  .link-logout{
+    display:inline-block;
+    transform: skew(20deg);
+  }
+
+  .step_quiz {
+	/*custom font*/
+	@import url(https://fonts.googleapis.com/css?family=Montserrat);
+	/*basic reset*/
+
+	/*form styles*/
+	#msform {
+		margin: 50px auto;
+		text-align: center;
+		position: relative;
+	}
+
+	#msform fieldset{
+		background: white;
+		border: 0 none;
+		border-radius: 3px;
+		box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+		padding: 20px 30px;
+		box-sizing: border-box;
+		width: 80%;
+		margin: 0 10%;
+
+		/*stacking fieldsets above each other*/
+		position: relative;
+	}
+
+	/*Hide all except first fieldset*/
+	#msform fieldset:not(:first-of-type) {
+		display: none;
+	}
+
+	/*buttons*/
+	#msform .action-button {
+		width: 100px;
+		background: #27AE60;
+		font-weight: bold;
+		color: white;
+		border: 0 none;
+		border-radius: 1px;
+		cursor: pointer;
+		padding: 10px 5px;
+		margin: 10px 5px;
+	}
+
+	#msform .action-button:hover,
+	#msform .action-button:focus {
+		box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+	}
+
+	/*headings*/
+	.fs-title {
+        font-size: 15px;
+        font-family: "Press Start 2P";
+		text-transform: uppercase;
+		color: $oil;
+		margin-bottom: 10px;
+	}
+
+	.fs-subtitle {
+		font-weight: normal;
+		font-size: 13px;
+		color: #666;
+		margin-bottom: 20px;
+	}
+
+	/*progressbar*/
+	#progressbar {
+		margin-bottom: 30px;
+		overflow: hidden;
+		/*CSS counters to number the steps*/
+		counter-reset: step;
+	}
+
+	#progressbar li {
+		list-style-type: none;
+		color: white;
+		text-transform: uppercase;
+		font-size: 9px;
+		width: 13.33%;
+		float: left;
+		position: relative;
+	}
+
+	#progressbar li:before {
+		content: counter(step);
+		counter-increment: step;
+		width: 20px;
+		line-height: 20px;
+		display: block;
+		font-size: 10px;
+		color: #333;
+		background: white;
+		border-radius: 3px;
+		margin: 0 auto 5px auto;
+	}
+
+	/*progressbar connectors*/
+	#progressbar li:after {
+		content: '';
+		width: 100%;
+		height: 2px;
+		background: white;
+		position: absolute;
+		left: -50%;
+		top: 9px;
+		z-index: -1;
+		/*put it behind the numbers*/
+	}
+
+	#progressbar li:first-child:after {
+		/*connector not needed before the first step*/
+		content: none;
+	}
+
+	/*marking active/completed steps green*/
+	/*The number of the step and the connector before it = green*/
+	#progressbar li.active:before,
+	#progressbar li.active:after {
+		background: #27AE60;
+		color: white;
+	}
+
+	//Area Pergunta
+	.lts {
+		min-height: 100px;		
+	}
+
+	//Configuracao dos radios options
+	.form-group.alternatives {
+		text-align: auto;
+		text-align: -webkit-auto;
+	}
+
+	//Hidden
+	.hidden{		
+		display: none;
+	}
+
+	label.error{
+		display: none!important;
+    }	
+
+    .logout-button:hover{
+        background-color: $oil;
+        text-decoration: none;
+        color: $red;
+        .link-logout{
+            text-decoration: none;
+            color: $red;
+        }
+    }
+    
+    .link-logout{
+        text-decoration: none;
+        color: $white;
+        text-transform: uppercase;
+    }
+    
+    
+    .logout-button {
+        padding: 10px;
+        background: $red;
+        margin-top: 20px;
+        margin-left: 20px;
+        border: 1px solid $oil;
+        font-family: 'Press Start 2P', cursive;
+        background:$red;
+        box-shadow:2px 2px 0 rgba(0,0,0,.5);
+        display:inline-block;
+        font-size:1em;
+        padding:.5em 2em;
+        text-decoration:none;
+      }
+    
+      .logout-button:hover {
+    
+        box-shadow:2px 2px 0 rgba(0,0,0,.5);
+      }
+    
+      .logout-button{
+        transform: skew(-20deg);
+      }
+    
+      .link-logout{
+        display:inline-block;
+        transform: skew(20deg);
+      }
+
+      .header{
+          background-color: $white;
+      }
+
+      .left-options{
+        font-family: 'Share Tech', sans-serif;
+        font-size: 1.3em;
+        text-align: left;
+     }
+     .left-options li{
+         margin: 2.5px 0px 2.5px 3px;
+     }
+
+     .container.lts{
+         margin-top: 50px;
+         h2{
+
+         }
+         h3{
+            font-family: 'Share Tech', sans-serif;
+         }
+     }
+}
+
+ //Progress Bar - Line
+ .step_quiz #progressbar li::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: $grey;
+    position: absolute;
+    left: -50%;
+    top: 9px;
+    z-index: -1;
+}
+
+//Progress Bar - Box
+.step_quiz #progressbar li::before {
+    content: counter(step);
+    counter-increment: step;
+    width: 20px;
+    line-height: 20px;
+    display: block;
+    font-size: 10px;
+    color: #333;
+    background: $grey;
+    border-radius: 3px;
+    margin: 0 auto 5px auto;
+}
 
