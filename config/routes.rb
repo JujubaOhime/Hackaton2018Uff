@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: "static_page#home"
-  devise_for :students
-  resources :students
+  devise_for :users
+  resources :users
   resources :answers, except: [:index, :new, :show, :edit]
 
   resources :quizzes do

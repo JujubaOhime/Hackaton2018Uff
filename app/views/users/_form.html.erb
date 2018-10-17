@@ -1,10 +1,10 @@
-<%= form_with(model: student, local: true) do |form| %>
-  <% if student.errors.any? %>
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
       <ul>
-      <% student.errors.full_messages.each do |message| %>
+      <% user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -18,12 +18,12 @@
 
   <div class="field">
     <%= form.label :email, "Email" %>
-    <%= form.date_select :email %>
+    <%= form.email_field :email %>
   </div>
 
   <div class="field">
     <%= form.label :birth, "Nascimento" %>
-    <%= form.date_select :birth %>
+    <%= form.date_field :birth %>
   </div>
 
   <div class="actions">

@@ -68,10 +68,10 @@ class QuizzesController < ApplicationController
   def quiz_finished
     reward_score = false
     reward_quiz = false
-    if current_student.achievement_score_unlocked?
+    if current_user.achievement_score_unlocked?
       reward_score = true
     end
-    if params[:questions_correct].to_i > (@quiz.questions.count / 2) && current_student.achievement_quiz_qty_unlocked?
+    if params[:questions_correct].to_i > (@quiz.questions.count / 2) && current_user.achievement_quiz_qty_unlocked?
       reward_score = true
     end
     if reward_quiz || reward_score

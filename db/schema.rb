@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_16_224314) do
+ActiveRecord::Schema.define(version: 2018_10_17_045859) do
 
   create_table "achievement_scores", force: :cascade do |t|
     t.integer "score"
@@ -64,28 +64,29 @@ ActiveRecord::Schema.define(version: 2018_10_16_224314) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "student_achievements", force: :cascade do |t|
-    t.integer "student_id"
+  create_table "user_achievements", force: :cascade do |t|
+    t.integer "user_id"
     t.integer "achievement_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["achievement_id"], name: "index_student_achievements_on_achievement_id"
-    t.index ["student_id"], name: "index_student_achievements_on_student_id"
+    t.index ["achievement_id"], name: "index_user_achievements_on_achievement_id"
+    t.index ["user_id"], name: "index_user_achievements_on_user_id"
   end
 
-  create_table "student_quizzes", force: :cascade do |t|
-    t.integer "student_id"
+  create_table "user_quizzes", force: :cascade do |t|
+    t.integer "user_id"
     t.integer "quiz_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["quiz_id"], name: "index_student_quizzes_on_quiz_id"
-    t.index ["student_id"], name: "index_student_quizzes_on_student_id"
+    t.index ["quiz_id"], name: "index_user_quizzes_on_quiz_id"
+    t.index ["user_id"], name: "index_user_quizzes_on_user_id"
   end
 
-  create_table "students", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "name"
     t.date "birth"
     t.integer "score"
+    t.integer "kind"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
@@ -93,8 +94,9 @@ ActiveRecord::Schema.define(version: 2018_10_16_224314) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.index ["email"], name: "index_students_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index [nil], name: "index_users_on_status"
   end
 
 end
