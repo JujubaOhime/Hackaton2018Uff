@@ -17,7 +17,7 @@
           <ul id="progressbar">
             <li class="active"></li>
             <% @questions.each do |question| %>
-            <% if counter <= @questions.count() %>
+            <% if counter < @questions.count() %>
             <li></li>
             <% end %>
             <% counter += 1 %>
@@ -57,10 +57,11 @@
 
             <% question.answers.each do |answer| %>
             <li>
-              <input type="radio" name="respostas<%= counter %>" required>
+              <input type="radio" name="respostas<%= counter %>" value="<%= answer.content %>" required>
               <%= answer.content %>
             </li>
             <% end %>
+            <input type="hidden" class="rspt" value="<%= question.answer.content %>">
           </ul>
           <!--Navegacao-->
           <input type="button" name="next" class="action-button nxt" data-step="step<%= counter %>" value="Responder" />
@@ -85,3 +86,168 @@
     <script src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
   </section>
 </section>
+
+<script>
+  $(document).ready(function () {
+    var current_fs, next_fs, previous_fs;
+    var left, opacity, scale;
+    var animating;
+
+    $(".previous").click(function () {
+      if (animating) return false;
+      animating = true;
+
+      current_fs = $(this).parent();
+      previous_fs = $(this)
+        .parent()
+        .prev();
+
+      //de-activate current step on progressbar
+      $("#progressbar li")
+        .eq($("fieldset").index(current_fs))
+        .removeClass("active");
+
+      //show the previous fieldset
+      previous_fs.show();
+      //hide the current fieldset with style
+      current_fs.animate({
+        opacity: 0
+      }, {
+        step: function (now, mx) {
+          //as the opacity of current_fs reduces to 0 - stored in "now"
+          //1. scale previous_fs from 80% to 100%
+          scale = 0.8 + (1 - now) * 0.2;
+          //2. take current_fs to the right(50%) - from 0%
+          left = (1 - now) * 50 + "%";
+          //3. increase opacity of previous_fs to 1 as it moves in
+          opacity = 1 - now;
+          current_fs.css({
+            left: left
+          });
+          previous_fs.css({
+            transform: "scale(" + scale + ")",
+            opacity: opacity
+          });
+        },
+        duration: 800,
+        complete: function () {
+          current_fs.hide();
+          animating = false;
+        },
+        //this comes from the custom easing plugin
+        easing: "easeInOutBack"
+      });
+    });
+
+    $(".submit").click(function () {
+      //Apos submetido o form aciona uma funcao sua
+      return false;
+    });
+
+    //***************************Jquery Validator******************************
+    $(".nxt").click(function (e) {
+      //Capturo o valor em data no next
+      let data_id = $(this).data('step');
+      //Converto ele no name do
+      let selects = $(`#${data_id}`);
+      //Funcao troca nome recebe o id clicado do botao   delay(100)    
+      let inputs = $(`#${data_id} input`);
+      let temSelectsValidos = selects.length > 0 && selects.valid();
+      let temInputsValidos = inputs.length > 0 && inputs.valid();
+
+      if (temSelectsValidos && temInputsValidos) {
+        //Se valido faz essa ação
+        changeName(this, data_id);
+      } else {
+        //Mensagem para o usuario
+        sweetAlert("Escolha uma resposta!");
+      }
+    });
+
+    //Change Button Name - Nome desejado, id destino
+    function changeName(idButton, id) {
+      $(idButton).val("Avançar");
+      //Exibe a explicacao
+      $(".hidden").fadeIn();
+      //Bloqueia resposta
+      $(`#${id} input[type=radio]`).attr('disabled', true);
+      $(idButton).delay(100).click(function () {
+        //Verifica Resposta
+        current_answer(id);
+        //Oculta explicacao
+        $(".hidden").delay(100).fadeOut();
+        if (animating) return false;
+        animating = true;
+
+        current_fs = $(this).parent();
+        next_fs = $(this)
+          .parent()
+          .next();
+
+        //activate next step on progressbar using the index of next_fs
+        $("#progressbar li")
+          .eq($("fieldset").index(next_fs))
+          .addClass("active");
+
+        //show the next fieldset
+        next_fs.show();
+        //hide the current fieldset with style
+        current_fs.animate({
+          opacity: 0
+        }, {
+          step: function (now, mx) {
+            //as the opacity of current_fs reduces to 0 - stored in "now"
+            //1. scale current_fs down to 80%
+            scale = 1 - (1 - now) * 0.2;
+            //2. bring next_fs from the right(50%)
+            left = now * 50 + "%";
+            //3. increase opacity of next_fs to 1 as it moves in
+            opacity = 1 - now;
+            current_fs.css({
+              transform: "scale(" + scale + ")",
+              position: "absolute"
+            });
+            next_fs.css({
+              left: left,
+              opacity: opacity
+            });
+          },
+          duration: 800,
+          complete: function () {
+            current_fs.hide();
+            animating = false;
+          },
+          //this comes from the custom easing plugin
+          easing: "easeInOutBack"
+        });
+      });
+    }
+
+    function current_answer(id) {
+      //Resposta Marcada
+      let ASW_A = $(`#${id} input[type='radio']:checked`).val();
+      //Resposta Correta
+      let ASW_B = $(`#${id} .rspt`).val();
+
+      if (ASW_A == ASW_B) {
+        scoreboard(true);
+      } else {
+        scoreboard(false);
+      }
+    }
+    
+    //Salva a pontuacao
+    const answers = {
+      right: 0,
+      error: 0
+    }
+
+    //Marca a pontuacao dos jogadores
+    function scoreboard(status) {
+      status ? answers.right += 1 : answers.error += 1;
+      console.log(answers);
+      return true;
+    }
+
+  });
+</script>
