@@ -89,39 +89,419 @@ ans = Answer.create!(
 
 qs.answer_id = ans.id
 
-25.times do |i|
-    Quiz.create!(
-        title: Faker::LeagueOfLegends.champion,
-        description: Faker::LeagueOfLegends.rank,
-        quantity_questions: 0
-    )
-end
+q = Quiz.create!(
+    title: Faker::LeagueOfLegends.champion,
+    description: Faker::LeagueOfLegends.rank,
+    quantity_questions: 0
+)
 
-25.times do |i|
-    StudentQuiz.create(student_id: s.id, quiz_id: (i+1))
-end
+qs = Question.create!(
+    title: Faker::LeagueOfLegends.masteries,
+    explanation: Faker::Lorem.sentence,
+    quantity_answers: 0,
+    quiz_id: q.id
+)
 
-20.times do |i|
-    Question.create!(
-        title: Faker::LeagueOfLegends.masteries,
-        explanation: Faker::Lorem.sentence,
-        quantity_answers: 0,
-        quiz_id: rand(2..24)
-    )
-end
-
-50.times do |i|
+4.times do |i|
     Answer.create!(
         content: Faker::LeagueOfLegends.quote,
-        question_id: rand(5..19)
+        question_id: qs.id
     )
 end
 
-Question.all.each do |q|
-    next if q.answers.second.nil?
-    q.answer_id = q.answers.second.id
-    q.save!
+ans = Answer.create!(
+    content: Faker::LeagueOfLegends.quote,
+    question_id: qs.id
+)
+
+qs.answer_id = ans.id
+
+qs = Question.create!(
+    title: Faker::LeagueOfLegends.masteries,
+    explanation: Faker::Lorem.sentence,
+    quantity_answers: 0,
+    quiz_id: q.id
+)
+
+4.times do |i|
+    Answer.create!(
+        content: Faker::LeagueOfLegends.quote,
+        question_id: qs.id
+    )
 end
+
+ans = Answer.create!(
+    content: Faker::LeagueOfLegends.quote,
+    question_id: qs.id
+)
+
+qs.answer_id = ans.id
+
+qs = Question.create!(
+    title: Faker::LeagueOfLegends.masteries,
+    explanation: Faker::Lorem.sentence,
+    quantity_answers: 0,
+    quiz_id: q.id
+)
+
+4.times do |i|
+    Answer.create!(
+        content: Faker::LeagueOfLegends.quote,
+        question_id: qs.id
+    )
+end
+
+ans = Answer.create!(
+    content: Faker::LeagueOfLegends.quote,
+    question_id: qs.id
+)
+
+qs.answer_id = ans.id
+
+q = Quiz.create!(
+    title: Faker::LeagueOfLegends.champion,
+    description: Faker::LeagueOfLegends.rank,
+    quantity_questions: 0
+)
+
+qs = Question.create!(
+    title: Faker::LeagueOfLegends.masteries,
+    explanation: Faker::Lorem.sentence,
+    quantity_answers: 0,
+    quiz_id: q.id
+)
+
+4.times do |i|
+    Answer.create!(
+        content: Faker::LeagueOfLegends.quote,
+        question_id: qs.id
+    )
+end
+
+ans = Answer.create!(
+    content: Faker::LeagueOfLegends.quote,
+    question_id: qs.id
+)
+
+qs.answer_id = ans.id
+
+qs = Question.create!(
+    title: Faker::LeagueOfLegends.masteries,
+    explanation: Faker::Lorem.sentence,
+    quantity_answers: 0,
+    quiz_id: q.id
+)
+
+4.times do |i|
+    Answer.create!(
+        content: Faker::LeagueOfLegends.quote,
+        question_id: qs.id
+    )
+end
+
+ans = Answer.create!(
+    content: Faker::LeagueOfLegends.quote,
+    question_id: qs.id
+)
+
+qs.answer_id = ans.id
+
+qs = Question.create!(
+    title: Faker::LeagueOfLegends.masteries,
+    explanation: Faker::Lorem.sentence,
+    quantity_answers: 0,
+    quiz_id: q.id
+)
+
+4.times do |i|
+    Answer.create!(
+        content: Faker::LeagueOfLegends.quote,
+        question_id: qs.id
+    )
+end
+
+ans = Answer.create!(
+    content: Faker::LeagueOfLegends.quote,
+    question_id: qs.id
+)
+
+qs.answer_id = ans.id
+
+q = Quiz.create!(
+    title: Faker::LeagueOfLegends.champion,
+    description: Faker::LeagueOfLegends.rank,
+    quantity_questions: 0
+)
+
+qs = Question.create!(
+    title: Faker::LeagueOfLegends.masteries,
+    explanation: Faker::Lorem.sentence,
+    quantity_answers: 0,
+    quiz_id: q.id
+)
+
+4.times do |i|
+    Answer.create!(
+        content: Faker::LeagueOfLegends.quote,
+        question_id: qs.id
+    )
+end
+
+ans = Answer.create!(
+    content: Faker::LeagueOfLegends.quote,
+    question_id: qs.id
+)
+
+qs.answer_id = ans.id
+
+qs = Question.create!(
+    title: Faker::LeagueOfLegends.masteries,
+    explanation: Faker::Lorem.sentence,
+    quantity_answers: 0,
+    quiz_id: q.id
+)
+
+4.times do |i|
+    Answer.create!(
+        content: Faker::LeagueOfLegends.quote,
+        question_id: qs.id
+    )
+end
+
+ans = Answer.create!(
+    content: Faker::LeagueOfLegends.quote,
+    question_id: qs.id
+)
+
+qs.answer_id = ans.id
+
+qs = Question.create!(
+    title: Faker::LeagueOfLegends.masteries,
+    explanation: Faker::Lorem.sentence,
+    quantity_answers: 0,
+    quiz_id: q.id
+)
+
+4.times do |i|
+    Answer.create!(
+        content: Faker::LeagueOfLegends.quote,
+        question_id: qs.id
+    )
+end
+
+ans = Answer.create!(
+    content: Faker::LeagueOfLegends.quote,
+    question_id: qs.id
+)
+
+qs.answer_id = ans.id
+
+q = Quiz.create!(
+    title: Faker::LeagueOfLegends.champion,
+    description: Faker::LeagueOfLegends.rank,
+    quantity_questions: 0
+)
+
+qs = Question.create!(
+    title: Faker::LeagueOfLegends.masteries,
+    explanation: Faker::Lorem.sentence,
+    quantity_answers: 0,
+    quiz_id: q.id
+)
+
+4.times do |i|
+    Answer.create!(
+        content: Faker::LeagueOfLegends.quote,
+        question_id: qs.id
+    )
+end
+
+ans = Answer.create!(
+    content: Faker::LeagueOfLegends.quote,
+    question_id: qs.id
+)
+
+qs.answer_id = ans.id
+
+qs = Question.create!(
+    title: Faker::LeagueOfLegends.masteries,
+    explanation: Faker::Lorem.sentence,
+    quantity_answers: 0,
+    quiz_id: q.id
+)
+
+4.times do |i|
+    Answer.create!(
+        content: Faker::LeagueOfLegends.quote,
+        question_id: qs.id
+    )
+end
+
+ans = Answer.create!(
+    content: Faker::LeagueOfLegends.quote,
+    question_id: qs.id
+)
+
+qs.answer_id = ans.id
+
+qs = Question.create!(
+    title: Faker::LeagueOfLegends.masteries,
+    explanation: Faker::Lorem.sentence,
+    quantity_answers: 0,
+    quiz_id: q.id
+)
+
+4.times do |i|
+    Answer.create!(
+        content: Faker::LeagueOfLegends.quote,
+        question_id: qs.id
+    )
+end
+
+ans = Answer.create!(
+    content: Faker::LeagueOfLegends.quote,
+    question_id: qs.id
+)
+
+qs.answer_id = ans.id
+
+q = Quiz.create!(
+    title: Faker::LeagueOfLegends.champion,
+    description: Faker::LeagueOfLegends.rank,
+    quantity_questions: 0
+)
+
+qs = Question.create!(
+    title: Faker::LeagueOfLegends.masteries,
+    explanation: Faker::Lorem.sentence,
+    quantity_answers: 0,
+    quiz_id: q.id
+)
+
+4.times do |i|
+    Answer.create!(
+        content: Faker::LeagueOfLegends.quote,
+        question_id: qs.id
+    )
+end
+
+ans = Answer.create!(
+    content: Faker::LeagueOfLegends.quote,
+    question_id: qs.id
+)
+
+qs.answer_id = ans.id
+
+qs = Question.create!(
+    title: Faker::LeagueOfLegends.masteries,
+    explanation: Faker::Lorem.sentence,
+    quantity_answers: 0,
+    quiz_id: q.id
+)
+
+4.times do |i|
+    Answer.create!(
+        content: Faker::LeagueOfLegends.quote,
+        question_id: qs.id
+    )
+end
+
+ans = Answer.create!(
+    content: Faker::LeagueOfLegends.quote,
+    question_id: qs.id
+)
+
+qs.answer_id = ans.id
+
+qs = Question.create!(
+    title: Faker::LeagueOfLegends.masteries,
+    explanation: Faker::Lorem.sentence,
+    quantity_answers: 0,
+    quiz_id: q.id
+)
+
+4.times do |i|
+    Answer.create!(
+        content: Faker::LeagueOfLegends.quote,
+        question_id: qs.id
+    )
+end
+
+ans = Answer.create!(
+    content: Faker::LeagueOfLegends.quote,
+    question_id: qs.id
+)
+
+qs.answer_id = ans.id
+
+q = Quiz.create!(
+    title: Faker::LeagueOfLegends.champion,
+    description: Faker::LeagueOfLegends.rank,
+    quantity_questions: 0
+)
+
+qs = Question.create!(
+    title: Faker::LeagueOfLegends.masteries,
+    explanation: Faker::Lorem.sentence,
+    quantity_answers: 0,
+    quiz_id: q.id
+)
+
+4.times do |i|
+    Answer.create!(
+        content: Faker::LeagueOfLegends.quote,
+        question_id: qs.id
+    )
+end
+
+ans = Answer.create!(
+    content: Faker::LeagueOfLegends.quote,
+    question_id: qs.id
+)
+
+qs.answer_id = ans.id
+
+qs = Question.create!(
+    title: Faker::LeagueOfLegends.masteries,
+    explanation: Faker::Lorem.sentence,
+    quantity_answers: 0,
+    quiz_id: q.id
+)
+
+4.times do |i|
+    Answer.create!(
+        content: Faker::LeagueOfLegends.quote,
+        question_id: qs.id
+    )
+end
+
+ans = Answer.create!(
+    content: Faker::LeagueOfLegends.quote,
+    question_id: qs.id
+)
+
+qs.answer_id = ans.id
+
+qs = Question.create!(
+    title: Faker::LeagueOfLegends.masteries,
+    explanation: Faker::Lorem.sentence,
+    quantity_answers: 0,
+    quiz_id: q.id
+)
+
+4.times do |i|
+    Answer.create!(
+        content: Faker::LeagueOfLegends.quote,
+        question_id: qs.id
+    )
+end
+
+ans = Answer.create!(
+    content: Faker::LeagueOfLegends.quote,
+    question_id: qs.id
+)
+
+qs.answer_id = ans.id
 
 40.times do |i|
     Achievement.create!(
