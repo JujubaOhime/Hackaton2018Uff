@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_17_045859) do
+ActiveRecord::Schema.define(version: 2018_10_17_101710) do
 
   create_table "achievement_scores", force: :cascade do |t|
     t.integer "score"
@@ -41,9 +41,9 @@ ActiveRecord::Schema.define(version: 2018_10_17_045859) do
     t.string "explanation"
     t.integer "quantity_answers"
     t.integer "quiz_id"
-    t.integer "answer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "answer_id"
     t.index ["answer_id"], name: "index_questions_on_answer_id"
     t.index ["quiz_id"], name: "index_questions_on_quiz_id"
   end
@@ -96,7 +96,6 @@ ActiveRecord::Schema.define(version: 2018_10_17_045859) do
     t.datetime "remember_created_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index [nil], name: "index_users_on_status"
   end
 
 end

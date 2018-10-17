@@ -58,11 +58,11 @@ $(document).ready(function () {
     //***************************Jquery Validator******************************
     $(".nxt").click(function (e) {
       //Capturo o valor em data no next
-      let data_id = $(this).data('step');
+      let dataId = $(this).data('step');
       //Converto ele no name do
-      let selects = $(`#${data_id}`);
+      let selects = $(`#${dataId}`);
       //Funcao troca nome recebe o id clicado do botao       
-      let inputs = $(`#${data_id} input`);
+      let inputs = $(`#${dataId} input`);
       let temSelectsValidos = selects.length > 0 && selects.valid();
       let temInputsValidos = inputs.length > 0 && inputs.valid();
   
