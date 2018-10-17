@@ -1,7 +1,7 @@
 <%= form_with(model: quiz, local: true) do |form| %>
   <% if quiz.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(quiz.errors.count, "error") %> prohibited this quiz from being saved:</h2>
+      <h2><%= pluralize(quiz.errors.count, "error") %> impediu este quiz de ser salvo:</h2>
 
       <ul>
       <% quiz.errors.full_messages.each do |message| %>
@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label :title, "Título" %>
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label :description, "Descrição" %>
     <%= form.text_field :description %>
   </div>
 

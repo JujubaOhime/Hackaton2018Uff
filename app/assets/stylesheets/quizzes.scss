@@ -1,27 +1,6 @@
 // Place all the styles related to the Quizzes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-* {
-	margin: 0;
-	padding: 0;
-}
-
-html {
-	height: 100%;
-	/*Image only BG fallback*/
-
-	/*background = gradient + image pattern combo*/
-	background: url(https://wallpapertag.com/wallpaper/full/d/8/9/309796-8-bit-wallpaper-1920x1200-ipad-retina.jpg);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	;
-}
-
-body {
-	background: transparent !important;
-	font-family: montserrat, arial, verdana;
-}
 
 .step_quiz {
 	/*custom font*/

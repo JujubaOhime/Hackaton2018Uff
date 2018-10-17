@@ -26,11 +26,13 @@
     <%= form.text_field :explanation %>
   </div>
 
-  <div class="field">
-    <%= form.hidden_field :quiz_id, value: params[:quiz_id] %>
-  </div>
+  <% if !params[:quiz_id].nil? %>
+    <div class="field">
+      <%= form.hidden_field :quiz_id, value: params[:quiz_id] %>
+    </div>
+  <% end %>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit value: "Enviar" %>
   </div>
 <% end %>
